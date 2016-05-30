@@ -1,1 +1,2 @@
-# programmeerproject
+# Programmeerproject
+###### Marije Dekker :smile:
