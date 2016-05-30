@@ -13,4 +13,4 @@
 #### Exteral components:
 ##### Er wordt gebruik gemaakt van de D3 library en voor de mooimaak van de pagina, waarschijnlijk bootstrap.
 #### Ontwerp:
-![](doc/ontwerp.jpg)
+![bla](doc/ontwerp.jpg)
