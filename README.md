@@ -12,3 +12,5 @@
 ##### Als datasets komen er twee of drie JSON-files. 1 over het drugsgerbuik per land en nog 1 of meer over de andere gegevens zoals criminaliteit over dat land. Deze gaan waarschijnlijk in een queue ingeladen worden.
 #### Exteral components:
 ##### Er wordt gebruik gemaakt van de D3 library en voor de mooimaak van de pagina, waarschijnlijk bootstrap.
+#### Ontwerp:
+##### ![](doc/ontwerp.png)
