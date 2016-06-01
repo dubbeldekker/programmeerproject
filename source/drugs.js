@@ -1,6 +1,8 @@
+// Marije Dekker
 var map = new Datamap({
 	element: document.getElementById('container'),
-	setProjection: function(element) {
+	// europa
+  setProjection: function(element) {
       var projection = d3.geo.equirectangular()
         .center([23, 10])
         .rotate([4.4, 0])
@@ -9,8 +11,9 @@ var map = new Datamap({
       var path = d3.geo.path()
         .projection(projection);
       return {path: path, projection: projection};
-    },
-	fills: {
+  },
+	// klassen
+  fills: {
     D1: '#fff7f3',
     D2: '#fde0dd',
     D3: '#fcc5c0',
@@ -22,6 +25,7 @@ var map = new Datamap({
     D9: '#49006a',
 	  defaultFill: '#666666'
   },
+  // tooltip
   geographyConfig: {
       popupTemplate: function(geo, data) {
         return ['<div class="hoverinfo">',
@@ -31,60 +35,82 @@ var map = new Datamap({
       } 
     }
 });
-
-d3.json("jsons/drug/cannabisuse.json", function(error, data){
-  if (error) throw error;
-
-  for (i in data) {
-    var fillKey = {};
-    var update = {};
-    fillKey["percentage"] = data[i].bestEstimate;
-    update[data[i].countrycode] = fillKey;
-    map.updateChoropleth(update);
-    if (data[i].bestEstimate <= 0.99){
-      fillKey["fillKey"] = "D1";
+// fill the map
+d3.selectAll(".drug")
+  .on("click", function() {
+    var drug = this.getAttribute("value");
+    var json;
+    if(drug == "amfetamine"){
+      json = "jsons/drug/amfetamineuse.json";
+    }
+    if(drug == "cannabis"){
+      json = "jsons/drug/cannabisuse.json";
+    }
+    if(drug == "cocaine"){
+      json = "jsons/drug/cocaineuse.json";
+    }
+    if(drug == "XTC"){
+      json = "jsons/drug/xtcuse.json";
+    }
+    if(drug == "opiates"){
+      json = "jsons/drug/opiateuse.json";
+    }
+    if(drug == "opioides"){
+      json = "jsons/drug/opioideuse.json";
+    }
+  d3.json(json, function(error, data){
+    if (error) throw error;
+    for (i in data) {
+      var fillKey = {};
+      var update = {};
+      fillKey["percentage"] = data[i].bestEstimate;
       update[data[i].countrycode] = fillKey;
       map.updateChoropleth(update);
+      if (data[i].bestEstimate <= 0.99){
+        fillKey["fillKey"] = "D1";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 1) && (data[i].bestEstimate <= 1.99)) {
+        fillKey["fillKey"] = "D2";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 2) && (data[i].bestEstimate <= 2.99)) {
+        fillKey["fillKey"] = "D3";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 3) && (data[i].bestEstimate <= 3.99)) {
+        fillKey["fillKey"] = "D4";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 4) && (data[i].bestEstimate <= 4.99)) {
+        fillKey["fillKey"] = "D5";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 5) && (data[i].bestEstimate <= 5.99)) {
+        fillKey["fillKey"] = "D6";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 6) && (data[i].bestEstimate <= 6.99)) {
+        fillKey["fillKey"] = "D7";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if ((data[i].bestEstimate >= 7) && (data[i].bestEstimate <= 7.99)) {
+        fillKey["fillKey"] = "D8";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
+      if (data[i].bestEstimate >= 8){
+        fillKey["fillKey"] = "D9";
+        update[data[i].countrycode] = fillKey;
+        map.updateChoropleth(update);
+      }
     }
-    if ((data[i].bestEstimate >= 1) && (data[i].bestEstimate <= 1.99)) {
-      fillKey["fillKey"] = "D2";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 2) && (data[i].bestEstimate <= 2.99)) {
-      fillKey["fillKey"] = "D3";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 3) && (data[i].bestEstimate <= 3.99)) {
-      fillKey["fillKey"] = "D4";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 4) && (data[i].bestEstimate <= 4.99)) {
-      fillKey["fillKey"] = "D5";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 5) && (data[i].bestEstimate <= 5.99)) {
-      fillKey["fillKey"] = "D6";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 6) && (data[i].bestEstimate <= 6.99)) {
-      fillKey["fillKey"] = "D7";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if ((data[i].bestEstimate >= 7) && (data[i].bestEstimate <= 7.99)) {
-      fillKey["fillKey"] = "D8";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-    if (data[i].bestEstimate >= 8){
-      fillKey["fillKey"] = "D9";
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-    }
-  }
-})
+  })
+});
