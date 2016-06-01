@@ -8,3 +8,4 @@
 ## day 3
 * Alle data is verzameld en omgezet naar JSON.
 * Design document is afgemaakt.
+* Begonnen met de choropleth map.

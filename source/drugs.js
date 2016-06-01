@@ -21,7 +21,15 @@ var map = new Datamap({
     D8: '#7a0177',
     D9: '#49006a',
 	  defaultFill: '#666666'
-  }
+  },
+  geographyConfig: {
+      popupTemplate: function(geo, data) {
+        return ['<div class="hoverinfo">',
+          'In ' + geo.properties.name + ' '
+          + data.percentage,  '% of the population use this drug',
+          '</div>'].join('');
+      } 
+    }
 });
 
 d3.json("jsons/drug/cannabisuse.json", function(error, data){
@@ -30,6 +38,9 @@ d3.json("jsons/drug/cannabisuse.json", function(error, data){
   for (i in data) {
     var fillKey = {};
     var update = {};
+    fillKey["percentage"] = data[i].bestEstimate;
+    update[data[i].countrycode] = fillKey;
+    map.updateChoropleth(update);
     if (data[i].bestEstimate <= 0.99){
       fillKey["fillKey"] = "D1";
       update[data[i].countrycode] = fillKey;
