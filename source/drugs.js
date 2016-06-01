@@ -1,7 +1,7 @@
 // Marije Dekker
 var map = new Datamap({
 	element: document.getElementById('container'),
-	// europa
+	// europe
   setProjection: function(element) {
       var projection = d3.geo.equirectangular()
         .center([23, 10])
@@ -12,7 +12,6 @@ var map = new Datamap({
         .projection(projection);
       return {path: path, projection: projection};
   },
-	// klassen
   fills: {
     D1: '#fff7f3',
     D2: '#fde0dd',
@@ -30,33 +29,38 @@ var map = new Datamap({
       popupTemplate: function(geo, data) {
         return ['<div class="hoverinfo">',
           'In ' + geo.properties.name + ' '
-          + data.percentage,  '% of the population use this drug',
+          + data.percentage,  '% of the population use ' + data.drug,
           '</div>'].join('');
       } 
     }
 });
-// fill the map
 d3.selectAll(".drug")
   .on("click", function() {
     var drug = this.getAttribute("value");
     var json;
     if(drug == "amfetamine"){
       json = "jsons/drug/amfetamineuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: amfetamine";
     }
     if(drug == "cannabis"){
       json = "jsons/drug/cannabisuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: cannabis";;
     }
     if(drug == "cocaine"){
       json = "jsons/drug/cocaineuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: cocaine";;
     }
     if(drug == "XTC"){
       json = "jsons/drug/xtcuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: XTC";;
     }
     if(drug == "opiates"){
       json = "jsons/drug/opiateuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: opiates";;
     }
     if(drug == "opioides"){
       json = "jsons/drug/opioideuse.json";
+      document.getElementById("sortdrug").innerHTML = "drug: opioides";;
     }
   d3.json(json, function(error, data){
     if (error) throw error;
@@ -64,6 +68,9 @@ d3.selectAll(".drug")
       var fillKey = {};
       var update = {};
       fillKey["percentage"] = data[i].bestEstimate;
+      update[data[i].countrycode] = fillKey;
+      map.updateChoropleth(update);
+      fillKey["drug"] = drug;
       update[data[i].countrycode] = fillKey;
       map.updateChoropleth(update);
       if (data[i].bestEstimate <= 0.99){
