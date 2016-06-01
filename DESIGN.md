@@ -8,4 +8,3 @@
 ###### Deze worden ook niet gebruikt.
 ### Sketches of UI:
 ######
-
