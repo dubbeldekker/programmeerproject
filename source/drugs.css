@@ -2,13 +2,15 @@
 #container {
 	width: 1000px;
 	height: 600px;
+	margin-top: 10px;
+	background-color: #4dc9ff;
+	background-image: url("http://lantamarineservices.com/wp-content/uploads/2013/02/underwater-fantasy-1-waves.gif");
+	border: #49006a 1px solid;
 }
-body {
-	background-color: #0000FF;
-}
+
 .drugmap {
 	width:1200px;
-	height: 635px;
+	height: 650px;
 }
 .my-legend {
   float: right;
@@ -39,4 +41,9 @@ body {
 #sortdrug {
 	margin-left: 450px;
 	margin-top: 20px;
+	width: 200px;
+	height: 15px;
+}
+.purple {
+	color:#49006a;
 }

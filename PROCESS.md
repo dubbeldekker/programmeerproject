@@ -8,4 +8,7 @@
 ## day 3
 * Alle data is verzameld en omgezet naar JSON.
 * Design document is afgemaakt.
-* Begonnen met de choropleth map en het drop-downmenu daarbij
+* Begonnen met de choropleth map en het drop-downmenu daarbij.
+## day 4
+* Choropleth map is af, tooltips van de landen waarvan geen data is werkt nog niet helemaal zoals het hoort.
+* Begonnen aan de barcharts over de influences.

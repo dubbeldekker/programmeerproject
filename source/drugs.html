@@ -12,10 +12,10 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 		<script src="worldmap.js"></script>
-		<h1>What is the reason for people in Europe to use drugs?</h1>
+		<h1 class="purple">What is the reason for people in Europe to use drugs?</h1>
 		<div class="drugmap">	
-			<h3> What percentage of the population of the countries in Europe use drugs? </h3>
-			<p>Click on the drug button to choose a drug</p>
+			<h3 class="purple"> What percentage of the population of the countries in Europe use drugs? </h3>
+			<p class="purple">Click on the drug button to choose a drug</p>
 			<div class="btn-group pull-left">
   				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
    						drug <span class="caret"></span>
@@ -29,26 +29,26 @@
     				<li><a class="drug" value="opioides" href="#">opioides</a></li>
   				</ul>
 			</div>
-			<div id="sortdrug"></div>
+			<div id="sortdrug" class="purple"></div>
 			<div class="my-legend pull-right">
 	      		<fieldset>
 	        		<legend class="legend">legend</legend>
 	    			<ul class="legend-labels">
-			          <li><span style='background:#fff7f3'></span>< 1%</li>
-			          <li><span style='background:#fde0dd'></span>1% - 2%</li>
-			          <li><span style='background:#fcc5c0'></span>2% - 3%</li>
-			          <li><span style='background:#fa9fb5'></span>3% - 4%</li>
-			          <li><span style='background:#f768a1'></span>4% - 5%</li>
-			          <li><span style='background:#dd3497'></span>5% - 6%</li>
-			          <li><span style='background:#ae017e'></span>6% - 7%</li>
-			          <li><span style='background:#7a0177'></span>7% - 8%</li>
-			          <li><span style='background:#49006a'></span>8% <</li>
+			          <li><span style='background:#fff7f3'></span>< 0.2%</li>
+			          <li><span style='background:#fde0dd'></span>0.2% - 0.4%</li>
+			          <li><span style='background:#fcc5c0'></span>0.4% - 0.6%</li>
+			          <li><span style='background:#fa9fb5'></span>0.6% - 0.8%</li>
+			          <li><span style='background:#f768a1'></span>0.8% - 1%</li>
+			          <li><span style='background:#dd3497'></span>1% - 1.2%</li>
+			          <li><span style='background:#ae017e'></span>1.2% - 1.4%</li>
+			          <li><span style='background:#7a0177'></span>1.4% - 1.6%</li>
+			          <li><span style='background:#49006a'></span>1.6% <</li>
 			          <li><span style='background:#666666'></span>no data</li>
 	    			</ul>
 	      		</fieldset>
 	      	</div>
 			<div id="container"></div>
 		</div>
-		<script src="drugs.js"></script>
+		<script src="drugmap.js"></script>
 	</body>
 </html>
