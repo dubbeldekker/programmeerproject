@@ -2,226 +2,226 @@
  {
    "countrycode":"RUS",
    "country":"Russian Federation",
-   "prison":445
+   "influence":445
  },
  {
    "countrycode":"BLR",
    "country":"Belarus",
-   "prison":306
+   "influence":306
  },
  {
    "countrycode":"LTU",
    "country":"Lithuania",
-   "prison":268
+   "influence":268
  },
  {
    "countrycode":"GEO",
    "country":"Georgia",
-   "prison":262
+   "influence":262
  },
  {
    "countrycode":"LVA",
    "country":"Latvia",
-   "prison":239
+   "influence":239
  },
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "prison":238
+   "influence":238
  },
  {
    "countrycode":"AZE",
    "country":"Azerbaijan",
-   "prison":236
+   "influence":236
  },
  {
    "countrycode":"MDA",
    "country":"Moldova (Republic of)",
-   "prison":227
+   "influence":227
  },
  {
    "countrycode":"EST",
    "country":"Estonia",
-   "prison":215
+   "influence":215
  },
  {
    "countrycode":"CZE",
    "country":"Czech Republic",
-   "prison":205
+   "influence":205
  },
  {
    "countrycode":"POL",
    "country":"Poland",
-   "prison":189
+   "influence":189
  },
  {
    "countrycode":"SVK",
    "country":"Slovakia",
-   "prison":186
+   "influence":186
  },
  {
    "countrycode":"ALB",
    "country":"Albania",
-   "prison":184
+   "influence":184
  },
  {
    "countrycode":"HUN",
    "country":"Hungary",
-   "prison":183
+   "influence":183
  },
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "prison":177
+   "influence":177
  },
  {
    "countrycode":"MNE",
    "country":"Montenegro",
-   "prison":174
+   "influence":174
  },
  {
    "countrycode":"SRB",
    "country":"Serbia",
-   "prison":148
+   "influence":148
  },
  {
    "countrycode":"GBR",
    "country":"United Kingdom: England & Wales",
-   "prison":147
+   "influence":147
  },
  {
    "countrycode":"MKD",
    "country":"Macedonia (former Yugoslav Republic of)",
-   "prison":147
+   "influence":147
  },
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "prison":144
+   "influence":144
  },
  {
    "countrycode":"PRT",
    "country":"Portugal",
-   "prison":139
+   "influence":139
  },
  {
    "countrycode":"ESP",
    "country":"Spain",
-   "prison":133
+   "influence":133
  },
  {
    "countrycode":"MLT",
    "country":"Malta",
-   "prison":131
+   "influence":131
  },
  {
    "countrycode":"ARM",
    "country":"Armenia",
-   "prison":130
+   "influence":130
  },
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "prison":125
+   "influence":125
  },
  {
    "countrycode":"LUX",
    "country":"Luxembourg",
-   "prison":112
+   "influence":112
  },
  {
    "countrycode":"BEL",
    "country":"Belgium",
-   "prison":105
+   "influence":105
  },
  {
    "countrycode":"FRA",
    "country":"France",
-   "prison":99
+   "influence":99
  },
  {
    "countrycode":"AUT",
    "country":"Austria",
-   "prison":95
+   "influence":95
  },
  {
    "countrycode":"GRC",
    "country":"Greece",
-   "prison":90
+   "influence":90
  },
  {
    "countrycode":"ITA",
    "country":"Italy",
-   "prison":88
+   "influence":88
  },
  {
    "countrycode":"CHE",
    "country":"Switzerland",
-   "prison":84
+   "influence":84
  },
  {
    "countrycode":"IRL",
    "country":"Ireland, Republic of",
-   "prison":81
+   "influence":81
  },
  {
    "countrycode":"HRV",
    "country":"Croatia",
-   "prison":81
+   "influence":81
  },
  {
    "countrycode":"CYP",
    "country":"Cyprus (Republic of)",
-   "prison":80
+   "influence":80
  },
  {
    "countrycode":"DEU",
    "country":"Germany",
-   "prison":76
+   "influence":76
  },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "prison":73
+   "influence":73
  },
  {
    "countrycode":"BIH",
    "country":"Bosnia and Herzegovina",
-   "prison":73
+   "influence":73
  },
  {
    "countrycode":"NOR",
    "country":"Norway",
-   "prison":71
+   "influence":71
  },
  {
    "countrycode":"NLD",
    "country":"Netherlands",
-   "prison":69
+   "influence":69
  },
  {
    "countrycode":"DNK",
    "country":"Denmark",
-   "prison":61
+   "influence":61
  },
  {
    "countrycode":"FIN",
    "country":"Finland",
-   "prison":57
+   "influence":57
  },
  {
    "countrycode":"SWE",
    "country":"Sweden",
-   "prison":55
+   "influence":55
  },
  {
    "countrycode":"ISL",
    "country":"Iceland",
-   "prison":45
+   "influence":45
  },
  {
    "countrycode":"LIE",
    "country":"Liechtenstein",
-   "prison":21
+   "influence":21
  }
 ]

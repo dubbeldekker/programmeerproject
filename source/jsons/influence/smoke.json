@@ -2,141 +2,141 @@
  {
    "countrycode":"AUT",
    "country":"Austria",
-   "smoker":23.2
+   "influence":23.2
  },
  {
    "countrycode":"BEL",
    "country":"Belgium",
-   "smoker":18.9
+   "influence":18.9
  },
  {
    "countrycode":"CZE",
    "country":"Czech Republic",
-   "smoker":22.2
+   "influence":22.2
  },
  {
    "countrycode":"DNK",
    "country":"Denmark",
-   "smoker":17
+   "influence":17
  },
  {
    "countrycode":"EST",
    "country":"Estonia",
-   "smoker":26
+   "influence":26
  },
  {
    "countrycode":"FIN",
    "country":"Finland",
-   "smoker":15.8
+   "influence":15.8
  },
  {
    "countrycode":"FRA",
    "country":"France",
-   "smoker":24.1
+   "influence":24.1
  },
  {
    "countrycode":"DEU",
    "country":"Germany",
-   "smoker":20.9
+   "influence":20.9
  },
  {
    "countrycode":"GRC",
    "country":"Greece",
-   "smoker":38.9
+   "influence":38.9
  },
  {
    "countrycode":"HUN",
    "country":"Hungary",
-   "smoker":26.5
+   "influence":26.5
  },
  {
    "countrycode":"ISL",
    "country":"Iceland",
-   "smoker":11.4
+   "influence":11.4
  },
  {
    "countrycode":"IRL",
    "country":"Ireland",
-   "smoker":19
+   "influence":19
  },
  {
    "countrycode":"ITA",
    "country":"Italy",
-   "smoker":19.7
+   "influence":19.7
  },
  {
    "countrycode":"LUX",
    "country":"Luxembourg",
-   "smoker":15.3
+   "influence":15.3
  },
  {
    "countrycode":"NLD",
    "country":"Netherlands",
-   "smoker":18.5
+   "influence":18.5
  },
  {
    "countrycode":"NOR",
    "country":"Norway",
-   "smoker":13
+   "influence":13
  },
  {
    "countrycode":"POL",
    "country":"Poland",
-   "smoker":23.8
+   "influence":23.8
  },
  {
    "countrycode":"PRT",
    "country":"Portugal",
-   "smoker":18.6
+   "influence":18.6
  },
  {
    "countrycode":"SVK",
    "country":"Slovak Republic",
-   "smoker":19.5
+   "influence":19.5
  },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "smoker":20.5
+   "influence":20.5
  },
  {
    "countrycode":"ESP",
    "country":"Spain",
-   "smoker":23.9
+   "influence":23.9
  },
  {
    "countrycode":"SWE",
    "country":"Sweden",
-   "smoker":10.7
+   "influence":10.7
  },
  {
    "countrycode":"CHE",
    "country":"Switzerland",
-   "smoker":20.4
+   "influence":20.4
  },
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "smoker":23.8
+   "influence":23.8
  },
  {
    "countrycode":"GBR",
    "country":"United Kingdom",
-   "smoker":20
+   "influence":20
  },
  {
    "countrycode":"LVA",
    "country":"Latvia",
-   "smoker":34.3
+   "influence":34.3
  },
  {
    "countrycode":"LTU",
    "country":"Lithuania",
-   "smoker":22.2
+   "influence":22.2
  },
  {
    "countrycode":"RUS",
    "country":"Russia",
-   "smoker":22
+   "influence":22
  }
 ]

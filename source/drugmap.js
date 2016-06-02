@@ -29,7 +29,8 @@ var map = new Datamap({
       popupTemplate: function(geo, data) {
         if (!data) { return['<div class="hoverinfo">',
           'Of ' + geo.properties.name + ' is no data',
-          '</div>'].join(''); }
+          '</div>'].join(''); 
+        }
         return ['<div class="hoverinfo">',
           'In ' + geo.properties.name + ' '
           + data.percentage,  '% of the population use ' + data.drug,

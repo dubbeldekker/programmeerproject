@@ -2,166 +2,166 @@
  {
    "countrycode":"BEL",
    "country":"Belgium",
-   "dropout":10.1
+   "influence":10.1
  },
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "dropout":13.4
+   "influence":13.4
  },
  {
    "countrycode":"CZE",
    "country":"Czech Republic",
-   "dropout":6.2
+   "influence":6.2
  },
  {
    "countrycode":"DNK",
    "country":"Denmark",
-   "dropout":7.8
+   "influence":7.8
  },
  {
    "countrycode":"DEU",
    "country":"Germany",
-   "dropout":10.1
+   "influence":10.1
  },
  {
    "countrycode":"EST",
    "country":"Estonia",
-   "dropout":11.2
+   "influence":11.2
  },
  {
    "countrycode":"IRL",
    "country":"Ireland",
-   "dropout":6.9
+   "influence":6.9
  },
  {
    "countrycode":"GRC",
    "country":"Greece",
-   "dropout":7.9
+   "influence":7.9
  },
  {
    "countrycode":"ESP",
    "country":"Spain",
-   "dropout":20
+   "influence":20
  },
  {
    "countrycode":"FRA",
    "country":"France",
-   "dropout":9.3
+   "influence":9.3
  },
  {
    "countrycode":"HRV",
    "country":"Croatia",
-   "dropout":2.8
+   "influence":2.8
  },
  {
    "countrycode":"ITA",
    "country":"Italy",
-   "dropout":14.7
+   "influence":14.7
  },
  {
    "countrycode":"CYP",
    "country":"Cyprus",
-   "dropout":5.3
+   "influence":5.3
  },
  {
    "countrycode":"LVA",
    "country":"Latvia",
-   "dropout":9.9
+   "influence":9.9
  },
  {
    "countrycode":"LTU",
    "country":"Lithuania",
-   "dropout":5.5
+   "influence":5.5
  },
  {
    "countrycode":"LUX",
    "country":"Luxembourg",
-   "dropout":9.3
+   "influence":9.3
  },
  {
    "countrycode":"HUN",
    "country":"Hungary",
-   "dropout":11.6
+   "influence":11.6
  },
  {
    "countrycode":"MLT",
    "country":"Malta",
-   "dropout":19.8
+   "influence":19.8
  },
  {
    "countrycode":"NLD",
    "country":"Netherlands",
-   "dropout":8.2
+   "influence":8.2
  },
  {
    "countrycode":"AUT",
    "country":"Austria",
-   "dropout":7.3
+   "influence":7.3
  },
  {
    "countrycode":"POL",
    "country":"Poland",
-   "dropout":5.3
+   "influence":5.3
  },
  {
    "countrycode":"PRT",
    "country":"Portugal",
-   "dropout":13.7
+   "influence":13.7
  },
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "dropout":19.1
+   "influence":19.1
  },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "dropout":5
+   "influence":5
  },
  {
    "countrycode":"SVK",
    "country":"Slovakia",
-   "dropout":6.9
+   "influence":6.9
  },
  {
    "countrycode":"FIN",
    "country":"Finland",
-   "dropout":9.2
+   "influence":9.2
  },
  {
    "countrycode":"SWE",
    "country":"Sweden",
-   "dropout":7
+   "influence":7
  },
  {
    "countrycode":"GBR",
    "country":"United Kingdom",
-   "dropout":10.8
+   "influence":10.8
  },
  {
    "countrycode":"ISL",
    "country":"Iceland",
-   "dropout":18.8
+   "influence":18.8
  },
  {
    "countrycode":"NOR",
    "country":"Norway",
-   "dropout":10.2
+   "influence":10.2
  },
  {
    "countrycode":"CHE",
    "country":"Switzerland",
-   "dropout":5.1
+   "influence":5.1
  },
  {
    "countrycode":"MKD",
    "country":"Former Yugoslav Republic of Macedonia. the",
-   "dropout":11.4
+   "influence":11.4
  },
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "dropout":36.4
+   "influence":36.4
  }
 ]
