@@ -4,9 +4,9 @@ var map = new Datamap({
 	// europe
   setProjection: function(element) {
       var projection = d3.geo.equirectangular()
-        .center([23, 10])
+        .center([20, 10])
         .rotate([4.4, 0])
-        .scale(600)
+        .scale(700)
         .translate([element.offsetWidth / 2, element.offsetHeight + 200]);
       var path = d3.geo.path()
         .projection(projection);
@@ -49,23 +49,23 @@ d3.selectAll(".drug")
     }
     if(drug == "cannabis"){
       json = "jsons/drug/cannabisuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: cannabis";;
+      document.getElementById("sortdrug").innerHTML = "drug: cannabis";
     }
     if(drug == "cocaine"){
       json = "jsons/drug/cocaineuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: cocaine";;
+      document.getElementById("sortdrug").innerHTML = "drug: cocaine";
     }
     if(drug == "XTC"){
       json = "jsons/drug/xtcuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: XTC";;
+      document.getElementById("sortdrug").innerHTML = "drug: XTC";
     }
     if(drug == "opiates"){
       json = "jsons/drug/opiateuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: opiates";;
+      document.getElementById("sortdrug").innerHTML = "drug: opiates";
     }
     if(drug == "opioides"){
       json = "jsons/drug/opioideuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: opioides";;
+      document.getElementById("sortdrug").innerHTML = "drug: opioides";
     }
   d3.json(json, function(error, data){
     if (error) throw error;

@@ -2,226 +2,226 @@
  {
    "countrycode":"RUS",
    "country":"Russian Federation",
-   "influence":445
+   "influence":0.445
  },
  {
    "countrycode":"BLR",
    "country":"Belarus",
-   "influence":306
+   "influence":0.306
  },
  {
    "countrycode":"LTU",
    "country":"Lithuania",
-   "influence":268
+   "influence":0.268
  },
  {
    "countrycode":"GEO",
    "country":"Georgia",
-   "influence":262
+   "influence":0.262
  },
  {
    "countrycode":"LVA",
    "country":"Latvia",
-   "influence":239
+   "influence":0.239
  },
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "influence":238
+   "influence":0.238
  },
  {
    "countrycode":"AZE",
    "country":"Azerbaijan",
-   "influence":236
+   "influence":0.236
  },
  {
    "countrycode":"MDA",
    "country":"Moldova (Republic of)",
-   "influence":227
+   "influence":0.227
  },
  {
    "countrycode":"EST",
    "country":"Estonia",
-   "influence":215
+   "influence":0.215
  },
  {
    "countrycode":"CZE",
    "country":"Czech Republic",
-   "influence":205
+   "influence":0.205
  },
  {
    "countrycode":"POL",
    "country":"Poland",
-   "influence":189
+   "influence":0.189
  },
  {
    "countrycode":"SVK",
    "country":"Slovakia",
-   "influence":186
+   "influence":0.186
  },
  {
    "countrycode":"ALB",
    "country":"Albania",
-   "influence":184
+   "influence":0.184
  },
  {
    "countrycode":"HUN",
    "country":"Hungary",
-   "influence":183
+   "influence":0.183
  },
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "influence":177
+   "influence":0.177
  },
  {
    "countrycode":"MNE",
    "country":"Montenegro",
-   "influence":174
+   "influence":0.174
  },
  {
    "countrycode":"SRB",
    "country":"Serbia",
-   "influence":148
+   "influence":0.148
  },
  {
    "countrycode":"GBR",
    "country":"United Kingdom: England & Wales",
-   "influence":147
+   "influence":0.147
  },
  {
    "countrycode":"MKD",
    "country":"Macedonia (former Yugoslav Republic of)",
-   "influence":147
+   "influence":0.147
  },
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "influence":144
+   "influence":0.144
  },
  {
    "countrycode":"PRT",
    "country":"Portugal",
-   "influence":139
+   "influence":0.139
  },
  {
    "countrycode":"ESP",
    "country":"Spain",
-   "influence":133
+   "influence":0.133
  },
  {
    "countrycode":"MLT",
    "country":"Malta",
-   "influence":131
+   "influence":0.131
  },
  {
    "countrycode":"ARM",
    "country":"Armenia",
-   "influence":130
+   "influence":0.130
  },
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "influence":125
+   "influence":0.125
  },
  {
    "countrycode":"LUX",
    "country":"Luxembourg",
-   "influence":112
+   "influence":0.112
  },
  {
    "countrycode":"BEL",
    "country":"Belgium",
-   "influence":105
+   "influence":0.105
  },
  {
    "countrycode":"FRA",
    "country":"France",
-   "influence":99
+   "influence":0.099
  },
  {
    "countrycode":"AUT",
    "country":"Austria",
-   "influence":95
+   "influence":0.095
  },
  {
    "countrycode":"GRC",
    "country":"Greece",
-   "influence":90
+   "influence":0.090
  },
  {
    "countrycode":"ITA",
    "country":"Italy",
-   "influence":88
+   "influence":0.088
  },
  {
    "countrycode":"CHE",
    "country":"Switzerland",
-   "influence":84
+   "influence":0.084
  },
  {
    "countrycode":"IRL",
    "country":"Ireland, Republic of",
-   "influence":81
+   "influence":0.081
  },
  {
    "countrycode":"HRV",
    "country":"Croatia",
-   "influence":81
+   "influence":0.081
  },
  {
    "countrycode":"CYP",
    "country":"Cyprus (Republic of)",
-   "influence":80
+   "influence":0.080
  },
  {
    "countrycode":"DEU",
    "country":"Germany",
-   "influence":76
+   "influence":0.076
  },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "influence":73
+   "influence":0.073
  },
  {
    "countrycode":"BIH",
    "country":"Bosnia and Herzegovina",
-   "influence":73
+   "influence":0.073
  },
  {
    "countrycode":"NOR",
    "country":"Norway",
-   "influence":71
+   "influence":0.071
  },
  {
    "countrycode":"NLD",
    "country":"Netherlands",
-   "influence":69
+   "influence":0.069
  },
  {
    "countrycode":"DNK",
    "country":"Denmark",
-   "influence":61
+   "influence":0.061
  },
  {
    "countrycode":"FIN",
    "country":"Finland",
-   "influence":57
+   "influence":0.057
  },
  {
    "countrycode":"SWE",
    "country":"Sweden",
-   "influence":55
+   "influence":0.055
  },
  {
    "countrycode":"ISL",
    "country":"Iceland",
-   "influence":45
+   "influence":0.045
  },
  {
    "countrycode":"LIE",
    "country":"Liechtenstein",
-   "influence":21
+   "influence":0.021
  }
 ]

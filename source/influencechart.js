@@ -24,7 +24,7 @@ var chart = d3.select(".chart")
 
 d3.selectAll(".influence")
   .on("click", function() {
-    map.updateChoropleth(null, {reset: true})
+    d3.selectAll(".remove").remove();
     var influence = this.getAttribute("value");
     var json;
     if(influence == "dropout"){
@@ -53,7 +53,7 @@ d3.selectAll(".influence")
     y.domain([0, d3.max(data, function(d) { return d.influence; })]);
 
     chart.append("g")
-      .attr("class", "x axis")
+      .attr("class", "x axis remove")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
      .selectAll("text")
@@ -64,19 +64,20 @@ d3.selectAll(".influence")
       .style("text-anchor", "start");
 
     chart.append("g")
-        .attr("class", "y axis")
+        .attr("class", "y axis remove")
         .call(yAxis)
       .append("text")
         .attr("transform", "rotate(90)")
         .attr("y", 6)
-        .attr("dx", "31em")
+        .attr("dy", "2.2em")
+        .attr("dx", "10em")
         .style("text-anchor", "end")
         .text("%" + influence);
 
     chart.selectAll(".bar")
       .data(data)
      .enter().append("rect")
-      .attr("class", "bar")
+      .attr("class", "bar remove")
       .attr("x", function(d) { return x(d.country); })
       .attr("y", function(d) { return y(d.influence); })
       .attr("height", function(d) { return height - y(d.influence); })
@@ -86,13 +87,12 @@ d3.selectAll(".influence")
         
       })
     .on('mouseover', function (data) {
-      dynamicColor = this.style.fill
       d3.select(this)
         .style('fill', '#49006a')
     })
     .on('mouseout', function (data) {
       d3.select(this)
-        .style('fill', dynamicColor)
+        .style('fill', '#dd3497')
     })
   })
 });
