@@ -1,4 +1,5 @@
 // Marije Dekker
+var drugCountry;
 var map = new Datamap({
 	element: document.getElementById('container'),
 	// europe
@@ -26,56 +27,34 @@ var map = new Datamap({
   },
   // tooltip
   geographyConfig: {
-      popupTemplate: function(geo, data) {
-        if (!data) { return['<div class="hoverinfo">',
-          'Of ' + geo.properties.name + ' is no data',
-          '</div>'].join(''); 
-        }
-        return ['<div class="hoverinfo">',
-          'In ' + geo.properties.name + ' '
-          + data.percentage,  '% of the population use ' + data.drug,
-          '</div>'].join('');
-      } 
-    }
+    popupTemplate: function(geo, data) {
+      if (!data) { return['<div class="hoverinfo">',
+        'Of ' + geo.properties.name + ' is no data',
+        '</div>'].join(''); 
+      }
+      return ['<div class="hoverinfo">',
+        'In ' + geo.properties.name + ' '
+        + data.percentage,  '% of the population use this drug',
+        '</div>'].join('');
+    } 
+  },
+  done: function(datamap) {
+    datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+      drugCountry = (geography.properties.name);
+      console.log(drugCountry);
+    });
+  }
 });
-d3.selectAll(".drug")
-  .on("click", function() {
+d3.selectAll(".drugmenu")
+  .on("change", function() {
     map.updateChoropleth(null, {reset: true})
-    var drug = this.getAttribute("value");
-    var json;
-    if(drug == "amfetamine"){
-      json = "jsons/drug/amfetamineuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: amfetamine";
-    }
-    if(drug == "cannabis"){
-      json = "jsons/drug/cannabisuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: cannabis";
-    }
-    if(drug == "cocaine"){
-      json = "jsons/drug/cocaineuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: cocaine";
-    }
-    if(drug == "XTC"){
-      json = "jsons/drug/xtcuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: XTC";
-    }
-    if(drug == "opiates"){
-      json = "jsons/drug/opiateuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: opiates";
-    }
-    if(drug == "opioides"){
-      json = "jsons/drug/opioideuse.json";
-      document.getElementById("sortdrug").innerHTML = "drug: opioides";
-    }
+    json = d3.select(this).property("value");
   d3.json(json, function(error, data){
     if (error) throw error;
     for (i in data) {
       var fillKey = {};
       var update = {};
       fillKey["percentage"] = data[i].bestEstimate;
-      update[data[i].countrycode] = fillKey;
-      map.updateChoropleth(update);
-      fillKey["drug"] = drug;
       update[data[i].countrycode] = fillKey;
       map.updateChoropleth(update);
       if (data[i].bestEstimate < 0.2){

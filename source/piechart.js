@@ -1,9 +1,10 @@
-var width = 300,
-    height = 300,
+// Marije Dekker
+var width = 550,
+    height = 550,
     radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
-    .range(["#fa9fb5", "#f768a1", "#dd3497", "#ae017e", "#7a0177", "#49006a"]);
+    .range(["#ff6666", "#d966ff", "#66b3ff", "#66ffff", "#6666ff", "#ff66ff"]);
 
 var arc = d3.svg.arc()
     .outerRadius(radius - 10)
@@ -23,7 +24,31 @@ var svg = d3.select("#piechart")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.json("jsons/drug/opiateuse.json", function(error, data) {
+var druglist = [];
+var drugdata = {};
+
+queue()
+    .defer(d3.json, 'jsons/drug/amfetamineuse.json')
+    .defer(d3.json, 'jsons/drug/cannabisuse.json')
+    .defer(d3.json, 'jsons/drug/cocaineuse.json')
+    .defer(d3.json, 'jsons/drug/xtcuse.json')
+    .defer(d3.json, 'jsons/drug/opiateuse.json')
+    .defer(d3.json, 'jsons/drug/opioideuse.json')
+    //.awaitAll(drugdata);
+
+function drugdata(error, amfetamine, cannabis, cocaine, xtc, opiate, opioide){
+    if (error) throw error;
+    for (i in amfetamine){
+        if (amfetamine[i].countrycode == "FRA") {
+            drugdata["amfetamine"] = amfetamine[i].bestEstimate;
+            druglist[0] = "amfetamine";
+        }
+    }
+    console.log(drugdata);
+
+}
+
+d3.json("jsons/drug/xtcuse.json", function(error, data) {
   if (error) throw error;
   data.forEach(function(d){
     d.bestEstimate = +d.bestEstimate;
@@ -38,8 +63,7 @@ d3.json("jsons/drug/opiateuse.json", function(error, data) {
       .attr("d", arc)
       .style("fill", function(d) { return color(d.data.country); });
 
-  g.append("text")
+  /*g.append("text")
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .attr("dy", ".35em")
-      .text(function(d) { return d.data.age; });
+      .text(function(d) { return d.data.country; });*/
 });

@@ -11,7 +11,6 @@
 .piechart {
 	width: 500px;
 	height: 350px;
-	margin-top: 250px;
 	position: absolute;
 	margin-left: 1050px;
 }
@@ -22,7 +21,10 @@
 }
 
 .my-legend {
-	float: right;
+	float: left;
+	position: absolute;
+	margin-top: 355px;
+
 }
 
 .my-legend ul.legend-labels li span {
@@ -48,7 +50,7 @@
     margin-bottom: 2px;
 }
 
-#sortdrug, #sortinfluence {
+#sortinfluence {
 	margin-left: 450px;
 	margin-top: 20px;
 	width: 200px;
@@ -62,4 +64,11 @@
 .chart {
 	height: 650px;
 	float: left;
+}
+
+h1 {
+	border-bottom: 2px solid #49006a;
+	border-top: 2px solid #49006a;
+	background-color: #f768a1;
+	text-align: center;
 }
