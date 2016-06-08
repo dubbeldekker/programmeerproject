@@ -12,3 +12,9 @@
 ## day 4
 * Choropleth map is af, tooltips van de landen waarvan geen data is werkt nog niet helemaal zoals het hoort.
 * Begonnen aan de barcharts over de influences.
+## day 5
+* barchart is helemaal afgekregen
+## day 6
+* begonnen aan de piechart, over de ratios tussen de verschillende drugs in een land
+## day 7
+* piechart af. kijken wat er nog met de barchart kan gebeuren.

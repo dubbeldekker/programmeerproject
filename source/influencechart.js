@@ -23,31 +23,11 @@ var chart = d3.select(".chart")
  .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.selectAll(".influence")
-  .on("click", function() {
+d3.selectAll(".influencemenu")
+  .on("change", function() {
     d3.selectAll(".remove").remove();
-    var influence = this.getAttribute("value");
-    var json;
-    if(influence == "dropout"){
-      json = "jsons/influence/dropout.json";
-      document.getElementById("sortinfluence").innerHTML = "influence: education";
-    }
-    if(influence == "poverty"){
-      json = "jsons/influence/poverty.json";
-      document.getElementById("sortinfluence").innerHTML = "influence: poverty";
-    }
-    if(influence == "criminality"){
-      json = "jsons/influence/prison.json";
-      document.getElementById("sortinfluence").innerHTML = "influence: criminality";
-    }
-    if(influence == "smoking"){
-      json = "jsons/influence/smoke.json";
-      document.getElementById("sortinfluence").innerHTML = "influence: smoking";
-    }
-    if(influence == "unemployment"){
-      json = "jsons/influence/unemployment.json";
-      document.getElementById("sortinfluence").innerHTML = "influence: unemployment";
-    }
+    map.updateChoropleth(null, {reset: true})
+    var json = d3.select(this).property("value");
     d3.json(json, function(error, data){
       if (error) throw error;
     x.domain(data.map(function(d) { return d.country; }));
@@ -73,7 +53,7 @@ d3.selectAll(".influence")
         .attr("dy", "2.2em")
         .attr("dx", "10em")
         .style("text-anchor", "end")
-        .text("%" + influence);
+        .text("%");
 
     chart.selectAll(".bar")
       .data(data)

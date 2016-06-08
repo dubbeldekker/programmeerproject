@@ -1,4 +1,5 @@
 // Marije Dekker
+
 var drugCountry;
 var map = new Datamap({
 	element: document.getElementById('container'),
@@ -38,17 +39,18 @@ var map = new Datamap({
         '</div>'].join('');
     } 
   },
+  // on click, piechart
   done: function(datamap) {
     datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-      drugCountry = (geography.properties.name);
-      console.log(drugCountry);
+      drugCountry = (geography.id);
+      makePiechart(drugCountry);
     });
   }
 });
 d3.selectAll(".drugmenu")
   .on("change", function() {
     map.updateChoropleth(null, {reset: true})
-    json = d3.select(this).property("value");
+    var json = d3.select(this).property("value");
   d3.json(json, function(error, data){
     if (error) throw error;
     for (i in data) {

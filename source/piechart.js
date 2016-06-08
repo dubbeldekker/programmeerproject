@@ -24,8 +24,7 @@ var svg = d3.select("#piechart")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-var druglist = [];
-var drugdata = {};
+var rawData = [];
 
 queue()
     .defer(d3.json, 'jsons/drug/amfetamineuse.json')
@@ -34,36 +33,48 @@ queue()
     .defer(d3.json, 'jsons/drug/xtcuse.json')
     .defer(d3.json, 'jsons/drug/opiateuse.json')
     .defer(d3.json, 'jsons/drug/opioideuse.json')
-    //.awaitAll(drugdata);
+    .await(drugdata);
 
 function drugdata(error, amfetamine, cannabis, cocaine, xtc, opiate, opioide){
     if (error) throw error;
-    for (i in amfetamine){
-        if (amfetamine[i].countrycode == "FRA") {
-            drugdata["amfetamine"] = amfetamine[i].bestEstimate;
-            druglist[0] = "amfetamine";
-        }
-    }
-    console.log(drugdata);
-
+    amfetamine.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "amfetamine", "bestEstimate": d.bestEstimate})
+    });
+    cannabis.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "cannabis", "bestEstimate": d.bestEstimate})
+    });
+    cocaine.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "cocaine", "bestEstimate": d.bestEstimate})
+    });
+    xtc.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "XTC", "bestEstimate": d.bestEstimate})
+    });
+    opiate.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "opiates", "bestEstimate": d.bestEstimate})
+    });
+    opioide.forEach(function(d){
+        rawData.push({"countryCode": d.countrycode, "drug": "opioide", "bestEstimate": d.bestEstimate})
+    });
 }
 
-d3.json("jsons/drug/xtcuse.json", function(error, data) {
-  if (error) throw error;
-  data.forEach(function(d){
-    d.bestEstimate = +d.bestEstimate;
-  });
-
-  var g = svg.selectAll(".arc")
+function makePiechart(drugCountry){
+    d3.selectAll(".remove").remove();
+    var data = [];
+    rawData.forEach(function(d){
+        if (drugCountry == d.countryCode){
+            data.push({"drug": d.drug, "bestEstimate": d.bestEstimate})
+        }
+    })
+    var g = svg.selectAll(".arc")
       .data(pie(data))
     .enter().append("g")
-      .attr("class", "arc");
+      .attr("class", "arc remove");
 
-  g.append("path")
+    g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return color(d.data.country); });
+      .style("fill", function(d) { return color(d.data.drug); });
 
-  /*g.append("text")
+    g.append("text")
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .text(function(d) { return d.data.country; });*/
-});
+      .text(function(d) { return d.data.bestEstimate + "%";});
+}
