@@ -4,7 +4,7 @@ var width = 550,
     radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
-    .range(["#ff6666", "#d966ff", "#66b3ff", "#66ffff", "#6666ff", "#ff66ff"]);
+    .range(["#ff5555", "#55ffff", "#55b9ff", "#d559ff", "#5555ff", "#ff55ff"]);
 
 var arc = d3.svg.arc()
     .outerRadius(radius - 10)
@@ -21,6 +21,7 @@ var pie = d3.layout.pie()
 var svg = d3.select("#piechart")
     .attr("width", width)
     .attr("height", height)
+    .attr("class", "pie")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -55,26 +56,29 @@ function drugdata(error, amfetamine, cannabis, cocaine, xtc, opiate, opioide){
     opioide.forEach(function(d){
         rawData.push({"countryCode": d.countrycode, "drug": "opioide", "bestEstimate": d.bestEstimate})
     });
+    makePiechart("FRA");
 }
-
 function makePiechart(drugCountry){
-    d3.selectAll(".remove").remove();
+    d3.selectAll(".removepie").remove();
     var data = [];
     rawData.forEach(function(d){
         if (drugCountry == d.countryCode){
-            data.push({"drug": d.drug, "bestEstimate": d.bestEstimate})
+            data.push({"drug": d.drug, "bestEstimate": d.bestEstimate});
         }
     })
+    if (data.length < 1) {
+        
+    }
     var g = svg.selectAll(".arc")
       .data(pie(data))
     .enter().append("g")
-      .attr("class", "arc remove");
+      .attr("class", "arc removepie");
 
     g.append("path")
       .attr("d", arc)
       .style("fill", function(d) { return color(d.data.drug); });
 
-    g.append("text")
+    /*g.append("text")
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .text(function(d) { return d.data.bestEstimate + "%";});
+      .text(function(d) { return d.data.bestEstimate + "%" + d.data.drug;});*/
 }

@@ -25,8 +25,7 @@ var chart = d3.select(".chart")
 
 d3.selectAll(".influencemenu")
   .on("change", function() {
-    d3.selectAll(".remove").remove();
-    map.updateChoropleth(null, {reset: true})
+    d3.selectAll(".removebar").remove();
     var json = d3.select(this).property("value");
     d3.json(json, function(error, data){
       if (error) throw error;
@@ -34,7 +33,7 @@ d3.selectAll(".influencemenu")
     y.domain([0, d3.max(data, function(d) { return d.influence; })]);
 
     chart.append("g")
-      .attr("class", "x axis remove")
+      .attr("class", "x axis removebar")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
      .selectAll("text")
@@ -45,7 +44,7 @@ d3.selectAll(".influencemenu")
       .style("text-anchor", "start");
 
     chart.append("g")
-        .attr("class", "y axis remove")
+        .attr("class", "y axis removebar")
         .call(yAxis)
       .append("text")
         .attr("transform", "rotate(90)")
@@ -58,7 +57,7 @@ d3.selectAll(".influencemenu")
     chart.selectAll(".bar")
       .data(data)
      .enter().append("rect")
-      .attr("class", "bar remove")
+      .attr("class", "bar removebar")
       .attr("x", function(d) { return x(d.country); })
       .attr("y", function(d) { return y(d.influence); })
       .attr("height", function(d) { return height - y(d.influence); })
