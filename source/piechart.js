@@ -80,5 +80,5 @@ function makePiechart(drugCountry){
 
     g.append("text")
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .text(function(d) { return d.data.bestEstimate + "%" + d.data.drug;});
+      .text(function(d) { return d.data.bestEstimate + "%";});
 }
