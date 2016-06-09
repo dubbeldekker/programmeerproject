@@ -56,7 +56,7 @@ function drugdata(error, amfetamine, cannabis, cocaine, xtc, opiate, opioide){
     opioide.forEach(function(d){
         rawData.push({"countryCode": d.countrycode, "drug": "opioide", "bestEstimate": d.bestEstimate})
     });
-    makePiechart("FRA");
+    makePiechart("DEU");
 }
 function makePiechart(drugCountry){
     d3.selectAll(".removepie").remove();
@@ -78,7 +78,7 @@ function makePiechart(drugCountry){
       .attr("d", arc)
       .style("fill", function(d) { return color(d.data.drug); });
 
-    /*g.append("text")
+    g.append("text")
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-      .text(function(d) { return d.data.bestEstimate + "%" + d.data.drug;});*/
+      .text(function(d) { return d.data.bestEstimate + "%" + d.data.drug;});
 }
