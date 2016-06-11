@@ -67,7 +67,9 @@ function makePiechart(drugCountry){
         }
     })
     if (data.length < 1) {
-        
+        svg.append("text")
+        .attr("class", "removepie purple")
+        .text(function(d) {return "There is no data of this country"})
     }
     var g = svg.selectAll(".arc")
       .data(pie(data))
