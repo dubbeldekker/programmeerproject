@@ -3,7 +3,7 @@
 	width: 1000px;
 	height: 600px;
 	margin-top: 31px;
-	background-color: #4dc9ff;
+	background-color: #e6ffff;
 	/*background-image: url("http://lantamarineservices.com/wp-content/uploads/2013/02/underwater-fantasy-1-waves.gif"); */
 	border: #49006a 1px solid;
 }
@@ -77,5 +77,11 @@ h1 {
 	border-bottom: 2px solid #49006a;
 	border-top: 2px solid #49006a;
 	background-color: #f768a1;
+	text-align: center;
+	height: 75px;
+	padding-top: 15px;
+}
+
+.centerText{
 	text-align: center;
 }

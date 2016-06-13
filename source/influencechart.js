@@ -23,11 +23,18 @@ var chart = d3.select(".chart")
  .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var colorBar = d3.scale.ordinal()
+  .range(["#4dc9ff", "#49006a"]);
+
 d3.selectAll(".influencemenu")
   .on("change", function() {
     d3.selectAll(".removebar").remove();
     var json = d3.select(this).property("value");
-    d3.json(json, function(error, data){
+    makeBarchart(json);
+});
+
+function makeBarchart(json){
+  d3.json(json, function(error, data){
       if (error) throw error;
     x.domain(data.map(function(d) { return d.country; }));
     y.domain([0, d3.max(data, function(d) { return d.influence; })]);
@@ -63,8 +70,7 @@ d3.selectAll(".influencemenu")
       .attr("height", function(d) { return height - y(d.influence); })
       .attr("width", x.rangeBand())
       .style({
-        'fill': '#dd3497'
-        
+        'fill': colorBar
       })
     .on('mouseover', function (data) {
       d3.select(this)
@@ -72,7 +78,7 @@ d3.selectAll(".influencemenu")
     })
     .on('mouseout', function (data) {
       d3.select(this)
-        .style('fill', '#dd3497')
+        .style('fill', colorBar)
     })
   })
-});
+}

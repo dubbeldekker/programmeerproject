@@ -5,10 +5,10 @@ var map = new Datamap({
 	element: document.getElementById('container'),
 	// europe
   setProjection: function(element) {
-      var projection = d3.geo.equirectangular()
-        .center([20, 10])
+      var projection = d3.geo.mercator()
+        .center([31, 14])
         .rotate([4.4, 0])
-        .scale(700)
+        .scale(540)
         .translate([element.offsetWidth / 2, element.offsetHeight + 200]);
       var path = d3.geo.path()
         .projection(projection);
@@ -28,6 +28,7 @@ var map = new Datamap({
   },
   // tooltip
   geographyConfig: {
+    borderColor: 'grey',
     popupTemplate: function(geo, data) {
       if (!data) { return['<div class="hoverinfo">',
         'Of ' + geo.properties.name + ' is no data',
