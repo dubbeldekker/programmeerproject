@@ -24,7 +24,7 @@ var chart = d3.select(".chart")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var jsonInfluence = "jsons/influence/dropout.json";
-var jsonDrug = "jsons/drug/cannabisuse.json";
+var jsonDrug = "jsons/drug/amfetamineuse.json";
 
 queue()
     .defer(d3.json, jsonInfluence)
