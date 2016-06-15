@@ -1,19 +1,24 @@
-// Marije Dekker
+// programmeerproject
+// Marije Dekker, 10785949
 
+// global variables
 var drugCountry;
+var json = "jsons/drug/amfetamineuse.json"
+// initiate choroplethmap
 var map = new Datamap({
 	element: document.getElementById('container'),
 	// europe
   setProjection: function(element) {
-      var projection = d3.geo.mercator()
-        .center([31, 14])
+      var projection = d3.geo.equirectangular()
+        .center([22, 10])
         .rotate([4.4, 0])
-        .scale(540)
+        .scale(675)
         .translate([element.offsetWidth / 2, element.offsetHeight + 200]);
       var path = d3.geo.path()
         .projection(projection);
       return {path: path, projection: projection};
   },
+  // fillcolors
   fills: {
     D1: '#fff7f3',
     D2: '#fde0dd',
@@ -26,13 +31,18 @@ var map = new Datamap({
     D9: '#49006a',
 	  defaultFill: '#666666'
   },
-  // tooltip
+  // tooltips
   geographyConfig: {
     borderColor: 'grey',
     popupTemplate: function(geo, data) {
       if (!data) { return['<div class="hoverinfo">',
-        'Of ' + geo.properties.name + ' is no data',
+        'There is no data of ' + geo.properties.name ,
         '</div>'].join(''); 
+      }
+      if (data.percentage == undefined) {
+        return['<div class="hoverinfo">',
+        'There is no data of ' + geo.properties.name ,
+        '</div>'].join('');
       }
       return ['<div class="hoverinfo">',
         'In ' + geo.properties.name + ' '
@@ -40,7 +50,7 @@ var map = new Datamap({
         '</div>'].join('');
     } 
   },
-  // on click, piechart
+  // make piechart
   done: function(datamap) {
     datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
       drugCountry = (geography.id);
@@ -48,10 +58,32 @@ var map = new Datamap({
     });
   }
 });
+// legend
+map.legend({
+  defaultFillName: "No data",
+  labels: {
+      D1: "0,0% - 0,2%",
+      D2: "0,2% - 0,4%",
+      D3: "0,4% - 0,6%",
+      D4: "0,6% - 0,8%",
+      D5: "0,8% - 1,0%",
+      D6: "1,0% - 1,2%",
+      D7: "1,2% - 1,4%",
+      D8: "1,4% - 1,6%",
+      D9: "1,6% <"
+    }
+});
+// if a drug is chosen
 d3.selectAll(".drugmenu")
   .on("change", function() {
     map.updateChoropleth(null, {reset: true})
-    var json = d3.select(this).property("value");
+    json = d3.select(this).property("value");
+    updateMap(json);
+  });
+// fill map on load
+updateMap(json);
+// update map fill colors and tooltip
+function updateMap(json){
   d3.json(json, function(error, data){
     if (error) throw error;
     for (i in data) {
@@ -107,4 +139,4 @@ d3.selectAll(".drugmenu")
       }
     }
   })
-});
+}

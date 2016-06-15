@@ -1,10 +1,10 @@
-/* Marije Dekker */
+/* programmeerproject
+   Marije Dekker, 10785949 */
 #container {
 	width: 1000px;
 	height: 600px;
-	margin-top: 31px;
+	margin-top: 20px;
 	background-color: #e6ffff;
-	/*background-image: url("http://lantamarineservices.com/wp-content/uploads/2013/02/underwater-fantasy-1-waves.gif"); */
 	border: #49006a 1px solid;
 }
 
@@ -19,42 +19,25 @@
 	width:1150px;
 	height: 700px;
 }
-
-.mapLegend {
-	float: left;
-	position: absolute;
-	margin-top: 375px;
-
+.datamaps-legend {
+	width: 100px;
+	margin-left: 25px;
+	bottom: 225px;
 }
 
-.pieLegend{
+dd {
+    border: 1px solid #666666;
+}
+
+dt {
+	min-width:70px;
+}
+
+.pieLegend {
 	width: 150px;
 	position: absolute;
 	margin-left: 1550px;
 	margin-top: 75px;
-}
-
-.my-legend ul.legend-labels li span {
-    display: block;
-    float: left;
-    height: 16px;
-    width: 30px;
-    margin-right: 5px;
-    margin-left: 0;
-    border: 1px solid #999;
-}
-
-.my-legend fieldset ul {
-    float: left;
-    list-style: none;
-}
-
-.my-legend fieldset ul li {
-    font-size: 80%;
-    list-style: none;
-    margin-left: 0;
-    line-height: 18px;
-    margin-bottom: 2px;
 }
 
 #sortinfluence {
@@ -82,6 +65,31 @@ h1 {
 	padding-top: 15px;
 }
 
-.centerText{
+.centerText {
 	text-align: center;
+}
+
+.aboveMenu {
+	border: 0.5px #b3b3b3 solid;
+	border-bottom: none;
+	width: 97px;
+	margin-bottom: 0px;
+	padding-left: 3px;
+}
+
+.drugmenu {
+	border-top: none;
+}
+
+.onHover {
+	cursor: pointer;
+}
+
+#tooltip {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #555;
+    width: 200px;
+    height: 100px;
 }

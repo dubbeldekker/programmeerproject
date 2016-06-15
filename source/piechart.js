@@ -1,4 +1,6 @@
-// Marije Dekker
+// programmeerproject
+// Marije Dekker, 10785949
+
 var width = 550,
     height = 550,
     radius = Math.min(width, height) / 2.1;

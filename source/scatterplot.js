@@ -1,4 +1,6 @@
-// Marije Dekker
+// programmeerproject
+// Marije Dekker, 10785949
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 500 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom;
@@ -35,7 +37,6 @@ d3.selectAll(".scatterinfluencemenu")
   .on("change", function() {
     d3.selectAll(".removeScatter").remove();
     jsonInfluence = d3.select(this).property("value");
-    //jsonDrug = d3.select(this).property("value");
     queue()
 	    .defer(d3.json, jsonInfluence)
 	    .defer(d3.json, jsonDrug)
@@ -44,7 +45,6 @@ d3.selectAll(".scatterinfluencemenu")
 d3.selectAll(".scatterdrugmenu")
 	.on("change", function() {
     d3.selectAll(".removeScatter").remove();
-    //jsonInfluence = d3.select(this).property("value");
     jsonDrug = d3.select(this).property("value");
     queue()
 	    .defer(d3.json, jsonInfluence)
@@ -53,8 +53,6 @@ d3.selectAll(".scatterdrugmenu")
 });
 
 function makePlot(error, influence, drug){
-  console.log(jsonDrug);
-  console.log(jsonInfluence);
   var plotData =[];
   if (error) throw error;
   influence.forEach(function(d){
