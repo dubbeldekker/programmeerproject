@@ -2,109 +2,90 @@
  {
    "countrycode":"ALB",
    "country":"Albania",
-   "poverty":6.79,
-   "extremepoverty":1.06
- },
+   "influence":6.79
+   },
  {
    "countrycode":"ARM",
    "country":"Armenia",
-   "poverty":16.97,
-   "extremepoverty":2.44
- },
+   "influence":16.97
+   },
  {
    "countrycode":"BLR",
    "country":"Belarus",
-   "poverty":0.03,
-   "extremepoverty":0
- },
+   "influence":0.03
+   },
  {
    "countrycode":"BIH",
    "country":"Bosnia and Herzegovina",
-   "poverty":0.42,
-   "extremepoverty":0.06
- },
+   "influence":0.42
+   },
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "poverty":4.7,
-   "extremepoverty":2.03
- },
+   "influence":4.7
+   },
  {
    "countrycode":"GEO",
    "country":"Georgia",
-   "poverty":28.58,
-   "extremepoverty":11.49
- },
+   "influence":28.58
+   },
  {
    "countrycode":"KAZ",
    "country":"Kazakhstan",
-   "poverty":0.26,
-   "extremepoverty":0.04
- },
+   "influence":0.26
+   },
  {
    "countrycode":"MKD",
    "country":"Macedonia",
-   "poverty":8.71,
-   "extremepoverty":1.33
- },
+   "influence":8.71
+   },
  {
    "countrycode":"MDA",
    "country":"Moldova",
-   "poverty":1.95,
-   "extremepoverty":0.08
- },
+   "influence":1.95
+   },
  {
    "countrycode":"MNE",
    "country":"Montenegro",
-   "poverty":3.9,
-   "extremepoverty":1.69
- },
+   "influence":3.9
+   },
  {
    "countrycode":"POL",
    "country":"Poland",
-   "poverty":0.26,
-   "extremepoverty":0.02
- },
+   "influence":0.26
+   },
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "poverty":4.08,
-   "extremepoverty":0
- },
+   "influence":4.08
+   },
  {
    "countrycode":"RUS",
-   "country":"Russian Federation",
-   "poverty":0.48,
-   "extremepoverty":0.04
- },
+   "country":"Russia",
+   "influence":0.48,
+   },
  {
    "countrycode":"SRB",
    "country":"Serbia",
-   "poverty":1.65,
-   "extremepoverty":0.1
- },
+   "influence":1.65
+   },
  {
    "countrycode":"SVK",
    "country":"Slovakia",
-   "poverty":0.42,
-   "extremepoverty":0.24
- },
+   "influence":0.42
+   },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "poverty":0.05,
-   "extremepoverty":0.03
- },
+   "influence":0.05
+   },
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "poverty":3.1,
-   "extremepoverty":0.26
- },
+   "influence":3.1
+   },
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "poverty":0.08,
-   "extremepoverty":0
- }
-]
+   "influence":0.08
+   }

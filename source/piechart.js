@@ -71,6 +71,7 @@ function makePiechart(drugCountry){
         .attr("class", "removepie")
         .text(function(d) {return "There is no data of this country"})
     }
+
     var g = svg.selectAll(".arc")
       .data(pie(pieData))
     .enter().append("g")

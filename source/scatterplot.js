@@ -1,7 +1,7 @@
 // Marije Dekker
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 500 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
     .range([0, width]);
@@ -23,18 +23,38 @@ var chart = d3.select(".chart")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.selectAll(".influencemenu")
-  .on("change", function() {
-    d3.selectAll(".removeScatter").remove();
-    jsonInfluence = d3.select(this).property("value");
-    jsonDrug = "jsons/drug/opioideuse.json";
-    queue()
+var jsonInfluence = "jsons/influence/dropout.json";
+var jsonDrug = "jsons/drug/cannabisuse.json";
+
+queue()
     .defer(d3.json, jsonInfluence)
     .defer(d3.json, jsonDrug)
     .await(makePlot);
+
+d3.selectAll(".scatterinfluencemenu")
+  .on("change", function() {
+    d3.selectAll(".removeScatter").remove();
+    jsonInfluence = d3.select(this).property("value");
+    //jsonDrug = d3.select(this).property("value");
+    queue()
+	    .defer(d3.json, jsonInfluence)
+	    .defer(d3.json, jsonDrug)
+	    .await(makePlot);
+	});
+d3.selectAll(".scatterdrugmenu")
+	.on("change", function() {
+    d3.selectAll(".removeScatter").remove();
+    //jsonInfluence = d3.select(this).property("value");
+    jsonDrug = d3.select(this).property("value");
+    queue()
+	    .defer(d3.json, jsonInfluence)
+	    .defer(d3.json, jsonDrug)
+	    .await(makePlot);
 });
 
 function makePlot(error, influence, drug){
+  console.log(jsonDrug);
+  console.log(jsonInfluence);
   var plotData =[];
   if (error) throw error;
   influence.forEach(function(d){
@@ -44,7 +64,6 @@ function makePlot(error, influence, drug){
       }
     };
   });
-
   plotData.forEach(function(d) {
     d.influence = +d.influence;
     d.drug = +d.drug;

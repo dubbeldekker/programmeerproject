@@ -1,7 +1,7 @@
 [
  {
    "countrycode":"RUS",
-   "country":"Russian Federation",
+   "country":"Russia",
    "influence":0.445
  },
  {
@@ -36,7 +36,7 @@
  },
  {
    "countrycode":"MDA",
-   "country":"Moldova (Republic of)",
+   "country":"Moldova",
    "influence":0.227
  },
  {
@@ -86,12 +86,12 @@
  },
  {
    "countrycode":"GBR",
-   "country":"United Kingdom: England & Wales",
+   "country":"United Kingdom",
    "influence":0.147
  },
  {
    "countrycode":"MKD",
-   "country":"Macedonia (former Yugoslav Republic of)",
+   "country":"Macedonia",
    "influence":0.147
  },
  {
@@ -161,7 +161,7 @@
  },
  {
    "countrycode":"IRL",
-   "country":"Ireland, Republic of",
+   "country":"Ireland",
    "influence":0.081
  },
  {
@@ -171,7 +171,7 @@
  },
  {
    "countrycode":"CYP",
-   "country":"Cyprus (Republic of)",
+   "country":"Cyprus",
    "influence":0.080
  },
  {

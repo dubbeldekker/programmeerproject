@@ -71,13 +71,20 @@
 		<div class="influencechart">
 			<h3 class="purple">The influences on using drugs.</h3>
 			<p class="purple">click on the influence button to choose a influence.</p>
-			<select class="influencemenu pull-left">
-				<option>influences</option>
+			<select class="scatterinfluencemenu pull-left">
 				<option class="influence" value="jsons/influence/dropout.json">dropout</option>
 				<option class="influence" value="jsons/influence/poverty.json">poverty</option>
 				<option class="influence" value="jsons/influence/prison.json">criminality</option>
 				<option class="influence" value="jsons/influence/smoke.json">smoking</option>
 				<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
+			</select>
+			<select class="pull-left scatterdrugmenu">
+				<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
+				<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
+				<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
+				<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
+				<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
+				<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
 			</select>
 			<svg class="chart"></svg>
 			<script src="scatterplot.js"></script>
