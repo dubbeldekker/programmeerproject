@@ -245,7 +245,7 @@
  {
    "countrycode":"ISL",
    "country":"Iceland",
-   "bestEstimate":0.923319064,
+   "bestEstimate":0.92,
    "highEstimate":1.501111151,
    "lowEstimate":0.345526977,
    "year":2011,
@@ -254,7 +254,7 @@
  {
    "countrycode":"MLT",
    "country":"Malta",
-   "bestEstimate":1.775802032,
+   "bestEstimate":1.78,
    "highEstimate":2.86055011,
    "lowEstimate":0.691053954,
    "year":2011,
@@ -263,7 +263,7 @@
  {
    "countrycode":"MNE",
    "country":"Montenegro",
-   "bestEstimate":0.517947257,
+   "bestEstimate":0.52,
    "highEstimate":0.863131025,
    "lowEstimate":0.172763489,
    "year":2011,
@@ -272,7 +272,7 @@
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "bestEstimate":0.517947257,
+   "bestEstimate":0.52,
    "highEstimate":0.863131025,
    "lowEstimate":0.172763489,
    "year":2011,

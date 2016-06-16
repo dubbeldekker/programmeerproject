@@ -246,7 +246,7 @@
    "countrycode":"BIH",
    "country":"Bosnia and Herzegovina",
    "bestEstimate":1.6,
-   "highEstimate":2.888430044,
+   "highEstimate":2.89,
    "lowEstimate":0.320095083,
    "year":2011,
    "ageGroup":"15-64"
@@ -255,8 +255,8 @@
    "countrycode":"MLT",
    "country":"Malta",
    "bestEstimate":3.1,
-   "highEstimate":4.821269896,
-   "lowEstimate":1.389247259,
+   "highEstimate":4.82,
+   "lowEstimate":1.39,
    "year":2011,
    "ageGroup":"15-64"
  },
@@ -264,7 +264,7 @@
    "countrycode":"MNE",
    "country":"Montenegro",
    "bestEstimate":1.9,
-   "highEstimate":3.302200241,
+   "highEstimate":3.30,
    "lowEstimate":0.426793444,
    "year":2011,
    "ageGroup":"15-64"

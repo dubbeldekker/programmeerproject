@@ -2,6 +2,7 @@
 // Marije Dekker, 10785949
 
 // global variables
+var chosenCountry;
 var drugCountry;
 var json = "jsons/drug/amfetamineuse.json"
 // initiate choroplethmap
@@ -54,7 +55,8 @@ var map = new Datamap({
   done: function(datamap) {
     datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
       drugCountry = (geography.id);
-      makePiechart(drugCountry);
+      chosenCountry = (geography.properties.name);
+      makePiechart(drugCountry, chosenCountry);
     });
   }
 });

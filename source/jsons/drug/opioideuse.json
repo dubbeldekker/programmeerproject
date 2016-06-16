@@ -2,7 +2,7 @@
  {
    "countrycode":"SVN",
    "country":"Slovenia",
-   "bestEstimate":0.753889209,
+   "bestEstimate":0.75,
    "highEstimate":0.753716941,
    "lowEstimate":0.753716941,
    "year":2004,
@@ -92,7 +92,7 @@
  {
    "countrycode":"EST",
    "country":"Estonia",
-   "bestEstimate":1.534574903,
+   "bestEstimate":1.53,
    "highEstimate":1.534574903,
    "lowEstimate":1.534574903,
    "year":2008,
@@ -164,7 +164,7 @@
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "bestEstimate":0.914339735,
+   "bestEstimate":0.91,
    "highEstimate":0.914339735,
    "lowEstimate":0.914339735,
    "year":2009,
@@ -173,7 +173,7 @@
  {
    "countrycode":"DNK",
    "country":"Denmark",
-   "bestEstimate":0.52224351,
+   "bestEstimate":0.52,
    "highEstimate":0.552607973,
    "lowEstimate":0.491879046,
    "year":2009,
@@ -191,7 +191,7 @@
  {
    "countrycode":"HRV",
    "country":"Croatia",
-   "bestEstimate":0.397704,
+   "bestEstimate":0.40,
    "highEstimate":0.397440051,
    "lowEstimate":0.397440051,
    "year":2010,
@@ -218,7 +218,7 @@
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "bestEstimate":0.03388,
+   "bestEstimate":0.03,
    "highEstimate":0.03388,
    "lowEstimate":0.03388,
    "year":2010,
@@ -227,7 +227,7 @@
  {
    "countrycode":"AZE",
    "country":"Azerbaijan",
-   "bestEstimate":1.500542094,
+   "bestEstimate":1.50,
    "highEstimate":1.719148053,
    "lowEstimate":1.281936134,
    "year":2010,
@@ -236,7 +236,7 @@
  {
    "countrycode":"GEO",
    "country":"Georgia",
-   "bestEstimate":1.36449522,
+   "bestEstimate":1.36,
    "highEstimate":1.398607601,
    "lowEstimate":1.33038284,
    "year":2010,
@@ -254,7 +254,7 @@
  {
    "countrycode":"RUS",
    "country":"Russian Federation",
-   "bestEstimate":2.288852103,
+   "bestEstimate":2.29,
    "highEstimate":2.29,
    "lowEstimate":2.29,
    "year":2010,
@@ -272,7 +272,7 @@
  {
    "countrycode":"BLR",
    "country":"Belarus",
-   "bestEstimate":0.586121694,
+   "bestEstimate":0.59,
    "highEstimate":0.586121694,
    "lowEstimate":0.586121694,
    "year":2011,
@@ -281,7 +281,7 @@
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "bestEstimate":0.510934991,
+   "bestEstimate":0.51,
    "highEstimate":0.510934991,
    "lowEstimate":0.510934991,
    "year":2011,
@@ -290,7 +290,7 @@
  {
    "countrycode":"MDA",
    "country":"Republic of Moldova",
-   "bestEstimate":0.121234171,
+   "bestEstimate":0.12,
    "highEstimate":0.121234171,
    "lowEstimate":0.121234171,
    "year":2011,
@@ -299,7 +299,7 @@
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "bestEstimate":0.113105101,
+   "bestEstimate":0.11,
    "highEstimate":0.113715573,
    "lowEstimate":0.113715573,
    "year":2011,
@@ -380,7 +380,7 @@
  {
    "countrycode":"GRB",
    "country":"United Kingdom (England and Wales)",
-   "bestEstimate":0.758211628,
+   "bestEstimate":0.76,
    "highEstimate":0.777369621,
    "lowEstimate":0.747091973,
    "year":2010,

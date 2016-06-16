@@ -92,7 +92,7 @@
  {
    "countrycode":"UKR",
    "country":"Ukraine",
-   "bestEstimate":0.914339735,
+   "bestEstimate":0.91,
    "highEstimate":0.914339735,
    "lowEstimate":0.914339735,
    "year":2009,
@@ -119,7 +119,7 @@
  {
    "countrycode":"GEO",
    "country":"Georgia",
-   "bestEstimate":0.723182467,
+   "bestEstimate":0.72,
    "highEstimate":0.741262028,
    "lowEstimate":0.705102905,
    "year":2010,
@@ -128,7 +128,7 @@
  {
    "countrycode":"HRV",
    "country":"Croatia",
-   "bestEstimate":0.397440051,
+   "bestEstimate":0.40,
    "highEstimate":0.397440051,
    "lowEstimate":0.397440051,
    "year":2010,
@@ -137,7 +137,7 @@
  {
    "countrycode":"TUR",
    "country":"Turkey",
-   "bestEstimate":0.03388,
+   "bestEstimate":0.03,
    "highEstimate":0.03388,
    "lowEstimate":0.0338,
    "year":2010,
@@ -146,7 +146,7 @@
  {
    "countrycode":"AZE",
    "country":"Azerbaijan",
-   "bestEstimate":1.500542094,
+   "bestEstimate":1.50,
    "highEstimate":1.719148053,
    "lowEstimate":1.281936134,
    "year":2010,
@@ -155,7 +155,7 @@
  {
    "countrycode":"RUS",
    "country":"Russian Federation",
-   "bestEstimate":1.402604874,
+   "bestEstimate":1.40,
    "highEstimate":1.4,
    "lowEstimate":1.4,
    "year":2010,
@@ -182,7 +182,7 @@
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
-   "bestEstimate":0.498161617,
+   "bestEstimate":0.50,
    "highEstimate":0.498161617,
    "lowEstimate":0.498161617,
    "year":2011,
@@ -191,7 +191,7 @@
  {
    "countrycode":"MDA",
    "country":"Republic of Moldova",
-   "bestEstimate":0.121234171,
+   "bestEstimate":0.12,
    "highEstimate":0.121234171,
    "lowEstimate":0.121234171,
    "year":2011,
@@ -200,7 +200,7 @@
  {
    "countrycode":"ROU",
    "country":"Romania",
-   "bestEstimate":0.113105101,
+   "bestEstimate":0.11,
    "highEstimate":0.113105101,
    "lowEstimate":0.113105101,
    "year":2011,
@@ -209,7 +209,7 @@
  {
    "countrycode":"BLR",
    "country":"Belarus",
-   "bestEstimate":0.586121694,
+   "bestEstimate":0.59,
    "highEstimate":0.586121694,
    "lowEstimate":0.586121694,
    "year":2011,

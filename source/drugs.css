@@ -1,5 +1,6 @@
 /* programmeerproject
    Marije Dekker, 10785949 */
+
 #container {
 	width: 1000px;
 	height: 600px;
@@ -9,7 +10,7 @@
 }
 
 .piechart {
-	width: 500px;
+	width: 650px;
 	height: 350px;
 	position: absolute;
 	margin-left: 1050px;
@@ -22,7 +23,7 @@
 .datamaps-legend {
 	width: 100px;
 	margin-left: 25px;
-	bottom: 225px;
+	top: 600px;
 }
 
 dd {
@@ -31,13 +32,6 @@ dd {
 
 dt {
 	min-width:70px;
-}
-
-.pieLegend {
-	width: 150px;
-	position: absolute;
-	margin-left: 1550px;
-	margin-top: 75px;
 }
 
 #sortinfluence {
@@ -74,7 +68,7 @@ h1 {
 	border-bottom: none;
 	width: 97px;
 	margin-bottom: 0px;
-	padding-left: 3px;
+	padding-left:26px;
 }
 
 .drugmenu {
@@ -85,11 +79,25 @@ h1 {
 	cursor: pointer;
 }
 
-#tooltip {
-    display: none;
-    position: fixed;
-    background-color: #fff;
-    border: 1px solid #555;
-    width: 200px;
-    height: 100px;
+path.slice{
+	stroke-width: 1px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: purple;
+	stroke-width: 1px;
+	fill: none;
+}
+
+noOverlap {
+	padding-top: 20px;
+	display: block;
+}
+
+.clickedCountry {
+	height: 20px;
+	width: 650px;
+	position: absolute;
+	margin-top: 265px;
 }
