@@ -25,6 +25,11 @@ var chart = d3.select(".chart")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+
 var jsonInfluence = "jsons/influence/dropout.json";
 var jsonDrug = "jsons/drug/amfetamineuse.json";
 
@@ -62,14 +67,10 @@ function makePlot(error, influence, drug){
       }
     };
   });
-  plotData.forEach(function(d) {
-    d.influence = +d.influence;
-    d.drug = +d.drug;
-  });
-
+  
   x.domain(d3.extent(plotData, function(d) { return d.influence; })).nice();
   y.domain(d3.extent(plotData, function(d) { return d.drug; })).nice();
-
+  
   chart.append("g")
       .attr("class", "x axis removeScatter")
       .attr("transform", "translate(0," + height + ")")
@@ -95,9 +96,22 @@ function makePlot(error, influence, drug){
   chart.selectAll(".dot")
       .data(plotData)
     .enter().append("circle")
-      .attr("class", "dot removeScatter")
-      .attr("r", 3.5)
+      .attr("class", "dot removeScatter onHover")
+      .attr("r", 7.5)
       .attr("cx", function(d) { return x(d.influence); })
       .attr("cy", function(d) { return y(d.drug); })
-      .style("fill",'#dd3497' );
+      .style("fill",'#dd3497' )
+       .on("mouseover", function(d) {
+           tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d.country + "<br> influence: " + d.influence + "%<br> drug: " + d.drug + "%<br>")
+               .style("left", (d3.event.pageX + 12) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+        })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
 };

@@ -3,89 +3,90 @@
    "countrycode":"ALB",
    "country":"Albania",
    "influence":6.79
-   },
+ },
  {
    "countrycode":"ARM",
    "country":"Armenia",
    "influence":16.97
-   },
+ },
  {
    "countrycode":"BLR",
    "country":"Belarus",
    "influence":0.03
-   },
+ },
  {
    "countrycode":"BIH",
    "country":"Bosnia and Herzegovina",
    "influence":0.42
-   },
+ },
  {
    "countrycode":"BGR",
    "country":"Bulgaria",
    "influence":4.7
-   },
+ },
  {
    "countrycode":"GEO",
    "country":"Georgia",
    "influence":28.58
-   },
+ },
  {
    "countrycode":"KAZ",
    "country":"Kazakhstan",
    "influence":0.26
-   },
+ },
  {
    "countrycode":"MKD",
    "country":"Macedonia",
    "influence":8.71
-   },
+ },
  {
    "countrycode":"MDA",
    "country":"Moldova",
    "influence":1.95
-   },
+ },
  {
    "countrycode":"MNE",
    "country":"Montenegro",
    "influence":3.9
-   },
+ },
  {
    "countrycode":"POL",
    "country":"Poland",
    "influence":0.26
-   },
+ },
  {
    "countrycode":"ROU",
    "country":"Romania",
    "influence":4.08
-   },
+ },
  {
    "countrycode":"RUS",
    "country":"Russia",
-   "influence":0.48,
-   },
+   "influence":0.48
+ },
  {
    "countrycode":"SRB",
    "country":"Serbia",
    "influence":1.65
-   },
+ },
  {
    "countrycode":"SVK",
    "country":"Slovakia",
    "influence":0.42
-   },
+ },
  {
    "countrycode":"SVN",
    "country":"Slovenia",
    "influence":0.05
-   },
+ },
  {
    "countrycode":"TUR",
    "country":"Turkey",
    "influence":3.1
-   },
+ },
  {
    "countrycode":"UKR",
    "country":"Ukraine",
    "influence":0.08
-   }
+ }
+]
