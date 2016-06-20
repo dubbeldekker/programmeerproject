@@ -93,11 +93,10 @@ function makePiechart(drugCountry, chosenCountry){
         .style("fill", function(d) { return colorPie(d.data.drug); })
         .attr("class", "slice")
     .on("mousemove", function(d){
-        console.log(d.data.bestEstimate)
         div.style("left", d3.event.pageX+10+"px");
               div.style("top", d3.event.pageY-25+"px");
               div.style("display", "inline-block");
-        div.html((d.data.bestEstimate)+"% use " + (d.data.drug));
+        div.html((d.data.bestEstimate)+"% use "+ (d.data.drug));
     })
     .on("mouseout", function(d){
         div.style("display", "none");
