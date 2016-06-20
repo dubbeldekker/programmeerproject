@@ -116,6 +116,14 @@ noOverlap {
   position: absolute;
   background-color: #00ffff;
 }
+
+.toolTip {
+  pointer-events: none;
+  border: #fa9fb5 solid 5px;
+  border-radius: 5%;
+  position: absolute;
+  background-color: #fa9fb5;
+}
 .dot {
 	stroke: #999999;
 }

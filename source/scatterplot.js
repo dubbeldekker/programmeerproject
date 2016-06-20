@@ -51,7 +51,7 @@ d3.selectAll(".scatterdrugmenu")
 	.on("change", function() {
     d3.selectAll(".removeScatter").remove();
     jsonDrug = d3.select(this).property("value");
-    updateMap(jsonDrug);
+    //updateMap(jsonDrug);
     queue()
 	    .defer(d3.json, jsonInfluence)
 	    .defer(d3.json, jsonDrug)
@@ -109,19 +109,19 @@ function makePlot(error, influence, drug){
           d3.select(this)
             .attr("r", 10)
             .style("fill", '#49006a')
-           tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
+          tooltip.transition()
+            .duration(200)
+            .style("opacity", .9);
           tooltip.html(d.country + "<br> influence: " + d.influence + "%<br> drug: " + d.drug + "%<br>")
-               .style("left", (d3.event.pageX + 12) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
+            .style("left", (d3.event.pageX + 12) + "px")
+            .style("top", (d3.event.pageY - 28) + "px")
         })
       .on("mouseout", function(d) {
           d3.select(this)
             .attr("r", 7.5)
             .style("fill", '#dd3497')
           tooltip.transition()
-               .duration(500)
-               .style("opacity", 0)
+            .duration(500)
+            .style("opacity", 0)
       });
 };

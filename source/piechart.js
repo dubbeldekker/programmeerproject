@@ -33,6 +33,8 @@ svg.append("g")
 svg.append("g")
     .attr("class", "lines");
 
+var div = d3.select("body").append("div").attr("class", "toolTip");
+
 var countryDiv = document.getElementById("clickedCountry");
 var rawPieData = [];
 // make queue
@@ -89,7 +91,17 @@ function makePiechart(drugCountry, chosenCountry){
     slice.enter()
         .insert("path")
         .style("fill", function(d) { return colorPie(d.data.drug); })
-        .attr("class", "slice");
+        .attr("class", "slice")
+    .on("mousemove", function(d){
+        console.log(d.data.bestEstimate)
+        div.style("left", d3.event.pageX+10+"px");
+              div.style("top", d3.event.pageY-25+"px");
+              div.style("display", "inline-block");
+        div.html((d.data.bestEstimate)+"% use " + (d.data.drug));
+    })
+    .on("mouseout", function(d){
+        div.style("display", "none");
+    });
     slice       
         .transition().duration(750)
         .attrTween("d", function(d) {
