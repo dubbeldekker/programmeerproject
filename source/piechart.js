@@ -33,10 +33,6 @@ svg.append("g")
 svg.append("g")
     .attr("class", "lines");
 
-var tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
 var countryDiv = document.getElementById("clickedCountry");
 var rawPieData = [];
 // make queue
@@ -90,19 +86,6 @@ function makePiechart(drugCountry, chosenCountry){
     // pie parts
     var slice = svg.select(".slices").selectAll("path.slice")
         .data(pie(pieData), key)
-        .on("mouseover", function(d) {
-           tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html(d.country + "<br> influence: " + d.influence + "%<br> drug: " + d.drug + "%<br>")
-               .style("left", (d3.event.pageX + 12) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-        })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
     slice.enter()
         .insert("path")
         .style("fill", function(d) { return colorPie(d.data.drug); })

@@ -51,6 +51,7 @@ d3.selectAll(".scatterdrugmenu")
 	.on("change", function() {
     d3.selectAll(".removeScatter").remove();
     jsonDrug = d3.select(this).property("value");
+    updateMap(jsonDrug);
     queue()
 	    .defer(d3.json, jsonInfluence)
 	    .defer(d3.json, jsonDrug)
@@ -63,7 +64,7 @@ function makePlot(error, influence, drug){
   influence.forEach(function(d){
     for(i in drug){
       if (d.countrycode == drug[i].countrycode){
-        plotData.push({"country": d.country, "influence": d.influence, "drug": drug[i].bestEstimate})
+        plotData.push({"countrycode":d.countrycode, "country": d.country, "influence": d.influence, "drug": drug[i].bestEstimate})
       }
     };
   });
@@ -93,7 +94,7 @@ function makePlot(error, influence, drug){
       .style("text-anchor", "end")
       .text("%")
 
-  chart.selectAll(".dot")
+ chart.selectAll(".dot")
       .data(plotData)
     .enter().append("circle")
       .attr("class", "dot removeScatter onHover")
@@ -101,7 +102,13 @@ function makePlot(error, influence, drug){
       .attr("cx", function(d) { return x(d.influence); })
       .attr("cy", function(d) { return y(d.drug); })
       .style("fill",'#dd3497' )
+      .on("click", function(d){
+        makePiechart(d.countrycode, d.country);
+      })
        .on("mouseover", function(d) {
+          d3.select(this)
+            .attr("r", 10)
+            .style("fill", '#49006a')
            tooltip.transition()
                .duration(200)
                .style("opacity", .9);
@@ -110,8 +117,11 @@ function makePlot(error, influence, drug){
                .style("top", (d3.event.pageY - 28) + "px")
         })
       .on("mouseout", function(d) {
+          d3.select(this)
+            .attr("r", 7.5)
+            .style("fill", '#dd3497')
           tooltip.transition()
                .duration(500)
-               .style("opacity", 0);
+               .style("opacity", 0)
       });
 };

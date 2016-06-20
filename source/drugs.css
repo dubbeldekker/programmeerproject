@@ -12,13 +12,14 @@
 .piechart {
 	width: 650px;
 	height: 350px;
-	position: absolute;
+	position: fixed;
 	margin-left: 1050px;
+	margin-top: 0px;
 }
 
 .drugmap {
-	width:1150px;
-	height: 700px;
+	width:1000px;
+	height: 750px;
 }
 .datamaps-legend {
 	width: 100px;
@@ -127,4 +128,14 @@ noOverlap {
 .scatterDrug {
 	margin-top: 150px;
 	position: absolute;
+}
+
+footer { 
+    display: block;
+    border-top: #dd3497 solid 3px;
+    background-color: #fa9fb5;
+    margin-top: 600px;
+}
+.datamaps-subunit {
+	cursor: pointer;
 }

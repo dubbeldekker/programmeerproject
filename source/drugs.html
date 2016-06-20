@@ -10,59 +10,67 @@
 		<script src="http://d3js.org/queue.v1.min.js"></script>
 	</head>
 	<body>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-		<script src="worldmap.js"></script>
-		<h1 class="purple"><b>Drugs use in Europe.</b></h1>
-		<div class="drugmap">	
-			<h3 class="purple"> What percentage of the population of the countries in Europe use drugs? </h3>
-			<p class="purple">Choose a drug.</p>
-			<div>
-				<p class="aboveDrugMenu">drug:</p>
-				<select class="pull-left drugmenu onHover">
-					<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-					<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-					<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-					<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-					<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-					<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
-				</select>
+		<div id="wrapper">
+			<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+			<script src="worldmap.js"></script>
+			<h1 class="purple"><b>Drug use in Europe.</b></h1>
+			<div class="drugmap">	
+				<h3 class="purple smallerWidth"> What percentage of the population of the countries in Europe use drugs? </h3>
+				<p class="purple smallerWidth">Choose a drug.</p>
+				<div class="smallerWidth">
+					<p class="aboveDrugMenu">drug:</p>
+					<select class="pull-left drugmenu onHover">
+						<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
+						<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
+						<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
+						<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
+						<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
+						<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+					</select>
+				</div>
+		      	<div class="piechart pull-right">
+		      		<h3 class="purple centerText">The ratios between the different drugs used in a country.</h3>
+		      		<div class="clickedCountry purple centerText" id="clickedCountry"></div>
+		      		<svg id="piechart"></svg>
+		      	</div>
+		      	<div id="container"></div>
 			</div>
-	      	<div class="piechart pull-right">
-	      		<h3 class="purple centerText">The ratios between the different drugs used in a country.</h3>
-	      		<div class="clickedCountry purple centerText" id="clickedCountry"></div>
-	      		<svg id="piechart"></svg>
-	      	</div>
-	      	<div id="container"></div>
-		</div>
-		<script src="piechart.js"></script>
-		<script src="drugmap.js"></script>
-		<div class="influencechart">
-			<h3 class="purple">The influences on using drugs.</h3>
-			<p class="purple">Choose an influence and/or drug.</p>
-			<div class="scatterDrug">
-				<p class="aboveDrugMenu">drug:</p>
-				<select class="pull-left scatterdrugmenu onHover">
-					<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-					<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-					<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-					<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-					<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-					<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
-				</select>
+			<script src="piechart.js"></script>
+			<script src="drugmap.js"></script>
+			<div class="influencechart">
+				<h3 class="purple">The influences on using drugs.</h3>
+				<p class="purple">Choose an influence and/or drug.</p>
+				<div class="scatterDrug">
+					<p class="aboveDrugMenu">drug:</p>
+					<select class="pull-left scatterdrugmenu onHover">
+						<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
+						<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
+						<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
+						<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
+						<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
+						<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+					</select>
+				</div>
+				<div class="scatterInfluence">
+					<p class="aboveInfluenceMenu">influence:</p>
+					<select class="scatterinfluencemenu pull-left onHover">
+						<option class="influence" value="jsons/influence/dropout.json">dropout</option>
+						<option class="influence" value="jsons/influence/poverty.json">poverty</option>
+						<option class="influence" value="jsons/influence/prison.json">criminality</option>
+						<option class="influence" value="jsons/influence/smoke.json">smoking</option>
+						<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
+					</select>
+				</div>
+				<svg class="chart"></svg>
+				<script src="scatterplot.js"></script>
 			</div>
-			<div class="scatterInfluence">
-				<p class="aboveInfluenceMenu">influence:</p>
-				<select class="scatterinfluencemenu pull-left onHover">
-					<option class="influence" value="jsons/influence/dropout.json">dropout</option>
-					<option class="influence" value="jsons/influence/poverty.json">poverty</option>
-					<option class="influence" value="jsons/influence/prison.json">criminality</option>
-					<option class="influence" value="jsons/influence/smoke.json">smoking</option>
-					<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
-				</select>
-			</div>
-			<svg class="chart"></svg>
-			<script src="scatterplot.js"></script>
 		</div>
 	</body>
+	<footer>
+		<p>De informatie over het drugsgebruik komt uit het World Drug Report 2014.</p>
+		<p>De informatie over roken, armoede en werkeloosheid komt van het OECD. <br> De informatie over het aantal dropouts en criminaliteit komt van Europstat.</p>
+		<p> Door: Marije Dekker. </p>
+		<p>Programmeerproject</p>
+	</footer>
 </html>
