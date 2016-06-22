@@ -20,7 +20,7 @@ var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.bestEstimate; });
 
-var svg = d3.select("#piechart")
+var svg = d3.select("#donut")
     .attr("width", width)
     .attr("height", height)
     .attr("class", "pie")
@@ -69,6 +69,14 @@ function drugData(error, amfetamine, cocaine, xtc, opiate, cannabis, opioide){
     });
     makePiechart("NLD", "Click on a country in the map. <br> Netherlands");
 }
+
+function convertData(data){
+    var total = data.forEach( function(d){
+        total = total + d.bestEstimate;
+        //return total;*/
+        console.log(total);
+    })
+}
 // function to make piechart
 function makePiechart(drugCountry, chosenCountry){
     // remove no data text
@@ -84,6 +92,8 @@ function makePiechart(drugCountry, chosenCountry){
     if (pieData.length < 1) {
         countryDiv.innerHTML = ("There is no data of " + chosenCountry + ".");
     }
+    convertData(pieData);
+
     var key = function(d){ return d.data.drug; };
     // pie parts
     var slice = svg.select(".slices").selectAll("path.slice")
@@ -92,17 +102,17 @@ function makePiechart(drugCountry, chosenCountry){
         .insert("path")
         .style("fill", function(d) { return colorPie(d.data.drug); })
         .attr("class", "slice")
-    .on("mousemove", function(d){
-        div.style("left", d3.event.pageX+10+"px");
-              div.style("top", d3.event.pageY-25+"px");
-              div.style("display", "inline-block");
-        div.html((d.data.bestEstimate)+"% use "+ (d.data.drug));
-    })
-    .on("mouseout", function(d){
-        div.style("display", "none");
-    });
-    slice       
-        .transition().duration(750)
+        // the tooltip
+        .on("mousemove", function(d){
+            div.style("left", d3.event.pageX+10+"px");
+                  div.style("top", d3.event.pageY-25+"px");
+                  div.style("display", "inline-block");
+            div.html((d.data.bestEstimate)+"% use "+ (d.data.drug));
+        })
+        .on("mouseout", function(d){
+            div.style("display", "none");
+        });
+    slice.transition().duration(750)
         .attrTween("d", function(d) {
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);

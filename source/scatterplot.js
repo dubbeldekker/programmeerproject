@@ -80,6 +80,7 @@ function makePlot(error, influence, drug){
       .attr("class", "label")
       .attr("x", width)
       .attr("y", -6)
+      .attr("transform", "rotate(80)")
       .style("text-anchor", "end")
       .text("%");
 

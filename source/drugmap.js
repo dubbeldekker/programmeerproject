@@ -7,12 +7,12 @@ var drugCountry;
 var json = "jsons/drug/amfetamineuse.json"
 // initiate choroplethmap
 var map = new Datamap({
-	element: document.getElementById('container'),
+	element: document.getElementById('map'),
 	// europe
   setProjection: function(element) {
       var projection = d3.geo.equirectangular()
-        .center([22, 10])
-        .rotate([4.4, 0])
+        .center([20, 10])
+        .rotate([4, 0])
         .scale(675)
         .translate([element.offsetWidth / 2, element.offsetHeight + 200]);
       var path = d3.geo.path()
@@ -76,7 +76,7 @@ map.legend({
     }
 });
 // if a drug is chosen
-d3.selectAll(".drugmenu")
+d3.selectAll(".drugMenu")
   .on("change", function() {
     map.updateChoropleth(null, {reset: true})
     json = d3.select(this).property("value");

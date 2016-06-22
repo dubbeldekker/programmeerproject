@@ -14,28 +14,48 @@
 			<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 			<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 			<script src="worldmap.js"></script>
-			<h1 class="purple"><b>Drug use in Europe.</b></h1>
-			<div class="drugmap">	
-				<h3 class="purple smallerWidth"> What percentage of the population of the countries in Europe use drugs? </h3>
-				<p class="purple smallerWidth">Choose a drug.</p>
-				<div class="smallerWidth">
-					<p class="aboveDrugMenu">drug:</p>
-					<select class="pull-left drugmenu onHover">
-						<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-						<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-						<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-						<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-						<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-						<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
-					</select>
-				</div>
-		      	<div class="piechart pull-right">
-		      		<h3 class="purple centerText">The ratios between the different drugs used in a country.</h3>
-		      		<div class="clickedCountry purple centerText" id="clickedCountry"></div>
-		      		<svg id="piechart"></svg>
-		      	</div>
-		      	<div id="container"></div>
+			<div id="projectTitle">
+				<h1 class="purple"><b>Drug use in Europe.</b></h1>
+				<h5 class="purple"><b>This project tries to visualize drug use in Europe and what could be an influence on drug use in the European countries.</b></h5>
 			</div>
+			<div id="drugmap">
+				<div id="drugmapTitle">
+					<h3 class="purple "> What percentage of the population of the countries in Europe use drugs? </h3>
+					<p class="purple">In this map is visualized how drug use is distributed over Europe and how much the drug is used in each European country.</p>
+					<p class="purple">All the values are the percentage of regular drug users of the population of the country.</p>
+					<p class= "purple">Drug:
+						<select class="drugMenu onHover purple">
+							<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
+							<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
+							<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
+							<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
+							<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
+							<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+						</select>
+					</p>
+				</div>
+				<div id="map"></div>
+				<div id="drugDataInformation">
+					<p class="purple"> This data comes from the <a href="http://www.unodc.org/wdr2014/en/interactive-map.html"> World Drug Report 2014 </a><br>For more information see: <a href="https://www.unodc.org/documents/wdr2014/World_Drug_Report_2014_web.pdf"> World Drug Report 2014</a>.</p>
+				</div>
+				<div id="drugmapInformation">
+					<p class="purple">The drugs are separated in the following groups:</p>
+					<ul class="purple">
+						<li><a href="https://www.drugs.com/amphetamine.html" class="onHover">Amfetamines</a>: stimulant drugs like speed/pep.</li>
+						<li><a href="https://www.drugs.com/npp/marijuana.html" class="onHover">Cannabis</a>: a depressant drug, marijuana/weed.</li>
+						<li><a href="https://www.drugs.com/illicit/cocaine.html" class="onHover">Cocaine</a>: a stimulant drug in the form of a powder or crack.</li>
+						<li><a href="https://www.drugs.com/illicit/ecstasy.html" class="onHover">XTC</a>: a stimulant drug, most important ingredient is MDMA.</li>
+						<li><a href="https://www.drugs.com/dict/opiate.html" class="onHover">opiates</a>: painkiller, a preparation/derivative from opium. </li>
+						<li><a href="https://www.drugs.com/article/opioid-narcotics.html" class="onHover">opioides</a>: synthetic opiates like oxycontin.</li>
+					</ul>
+					<p class="purple">Click on the drugs for more information or take a look at <a href="https://www.drugs.com/">www.drugs.com</a>.</p>
+				</div>
+			</div>
+	      	<div id="piechart">
+	      		<h3 class="purple centerText">The ratios between the different drugs used in a country.</h3>
+	      		<div class="clickedCountry purple" id="clickedCountry"></div>
+	      		<svg id="donut"></svg>
+	      	</div>
 			<script src="piechart.js"></script>
 			<script src="drugmap.js"></script>
 			<div class="influencechart">
@@ -68,10 +88,4 @@
 			</div>
 		</div>
 	</body>
-	<footer>
-		<p>De informatie over het drugsgebruik komt uit het World Drug Report 2014.</p>
-		<p>De informatie over roken, armoede en werkeloosheid komt van het OECD. <br> De informatie over het aantal dropouts en criminaliteit komt van Europstat.</p>
-		<p> Door: Marije Dekker. </p>
-		<p>Programmeerproject</p>
-	</footer>
 </html>

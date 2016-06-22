@@ -1,39 +1,91 @@
 /* programmeerproject
    Marije Dekker, 10785949 */
+/* general */
+.purple {
+	color:#49006a;
+}
+.onHover {
+	cursor: pointer;
+}
+/* title */
+#projectTitle {
+	border-bottom: 3px solid #7a0177;
+	border-top: 3px solid #7a0177;
+	background-color: #fa9fb5;
+	text-align: center;
+	padding-bottom: 15px;
+}
+/* worldmap */
+#drugmap{
+	margin-left: 50px;
+}
+#drugmapTitle {
+	width: 900px;
+	text-align: center;
+	position: absolute;
+	padding-top: 25px;
+}
+.drugMenu {
+	border: none;
+}
+#drugmapInformation {
+	width: 500px;
+	margin-top: 680px;
+	position: absolute;
+}
+#drugDataInformation {
+	position: absolute;
+	margin-left: 500px;
+	margin-top: 685px;
+	width: 450px;
+	text-align: right;
 
-#container {
-	width: 1000px;
-	height: 600px;
-	margin-top: 20px;
+}
+div p a, div ul a {
+	color: #49006a;
+	text-decoration: none;
+}
+#map {
+	width: 950px;
+	height: 500px;
 	background-color: #e6ffff;
-	border: #49006a 1px solid;
+	position: absolute;
+	margin-top: 175px;
 }
-
-.piechart {
-	width: 650px;
-	height: 350px;
-	position: fixed;
-	margin-left: 1050px;
-	margin-top: 0px;
-}
-
-.drugmap {
-	width:1000px;
-	height: 750px;
+.datamaps-subunit {
+	cursor: pointer;
 }
 .datamaps-legend {
 	width: 100px;
 	margin-left: 25px;
-	top: 600px;
+	top: 300px;
 }
-
 dd {
     border: 1px solid #666666;
 }
-
 dt {
 	min-width:70px;
 }
+/* piechart */
+#piechart {
+	width: 650px;
+	position: fixed;
+	margin-left: 1050px;
+	margin-top: 25px;
+	text-align: center;
+}
+
+/* scatterplot */
+.influencechart {
+	position: absolute;
+	margin-top: 900px;
+	margin-left: 50px;
+	padding-bottom: 100px;
+}
+/* footer */
+
+
+/**/
 
 #sortinfluence {
 	margin-left: 450px;
@@ -42,28 +94,11 @@ dt {
 	height: 15px;
 }
 
-.purple {
-	color:#49006a;
-}
-
 .chart {
 	height: 450px;
 	float: left;
 	position: absolute;
 	margin-left: 100px;
-}
-
-h1 {
-	border-bottom: 2px solid #49006a;
-	border-top: 2px solid #49006a;
-	background-color: #f768a1;
-	text-align: center;
-	height: 75px;
-	padding-top: 15px;
-}
-
-.centerText {
-	text-align: center;
 }
 
 .aboveDrugMenu, .aboveInfluenceMenu{
@@ -77,12 +112,8 @@ h1 {
 	width: 117px;
 }
 
-.drugmenu, .scatterdrugmenu, .scatterinfluencemenu {
+.scatterdrugmenu, .scatterinfluencemenu {
 	border-top: none;
-}
-
-.onHover {
-	cursor: pointer;
 }
 
 path.slice{
@@ -94,11 +125,6 @@ polyline{
 	stroke: purple;
 	stroke-width: 1px;
 	fill: none;
-}
-
-noOverlap {
-	padding-top: 20px;
-	display: block;
 }
 
 .clickedCountry {
@@ -136,14 +162,4 @@ noOverlap {
 .scatterDrug {
 	margin-top: 150px;
 	position: absolute;
-}
-
-footer { 
-    display: block;
-    border-top: #dd3497 solid 3px;
-    background-color: #fa9fb5;
-    margin-top: 600px;
-}
-.datamaps-subunit {
-	cursor: pointer;
 }
