@@ -29,21 +29,24 @@
 	border: none;
 }
 #drugmapInformation {
-	width: 500px;
-	margin-top: 680px;
+	width: 450px;
+	margin-top: 675px;
+	margin-left: 550px;
 	position: absolute;
 }
 #drugDataInformation {
 	position: absolute;
-	margin-left: 500px;
-	margin-top: 685px;
+	margin-top: 675px;
 	width: 450px;
-	text-align: right;
-
 }
 div p a, div ul a {
 	color: #49006a;
 	text-decoration: none;
+}
+#drugmapFacts {
+	position: absolute;
+	width: 500px;
+	margin-top: 725px;
 }
 #map {
 	width: 950px;

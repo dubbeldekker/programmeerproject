@@ -71,11 +71,12 @@ function drugData(error, amfetamine, cocaine, xtc, opiate, cannabis, opioide){
 }
 
 function convertData(data){
-    var total = data.forEach( function(d){
-        total = total + d.bestEstimate;
-        //return total;*/
-        console.log(total);
+    var total = 0; 
+    data.forEach( function(d){
+        return total = total + d.bestEstimate;
     })
+    data.map(function(d) { d.percent=Math.round((d.bestEstimate*100)/total) })
+    return data;
 }
 // function to make piechart
 function makePiechart(drugCountry, chosenCountry){
@@ -92,7 +93,7 @@ function makePiechart(drugCountry, chosenCountry){
     if (pieData.length < 1) {
         countryDiv.innerHTML = ("There is no data of " + chosenCountry + ".");
     }
-    convertData(pieData);
+    pieData = convertData(pieData);
 
     var key = function(d){ return d.data.drug; };
     // pie parts
@@ -107,7 +108,7 @@ function makePiechart(drugCountry, chosenCountry){
             div.style("left", d3.event.pageX+10+"px");
                   div.style("top", d3.event.pageY-25+"px");
                   div.style("display", "inline-block");
-            div.html((d.data.bestEstimate)+"% use "+ (d.data.drug));
+            div.html((d.data.percent)+"% of the regular drugusers use "+ (d.data.drug));
         })
         .on("mouseout", function(d){
             div.style("display", "none");
