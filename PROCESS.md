@@ -1,12 +1,10 @@
 # Process book
 #### 30 mei
 * Proposal gemaakt.
-
 #### 31 mei
 * De data verzameld en deel van de csv's gemaakt. 
 * Design document gemaakt, is nog niet af. 
 * Daarnaast heb ik ervoor gekozen om het alleen over Europa te houden i.p.v. de hele wereld. Anders werd het teveel en de oorzaken kunnen per werelddeel te sterk verschillen.
-
 #### 01 juni
 * Alle data is verzameld en omgezet naar JSON.
 * Design document af.
