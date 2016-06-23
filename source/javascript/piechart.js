@@ -43,12 +43,12 @@ var countryDiv = document.getElementById("clickedCountry");
 var rawPieData = [];
 // make queue
 queue()
-    .defer(d3.json, 'jsons/drug/amfetamineuse.json')
-    .defer(d3.json, 'jsons/drug/cocaineuse.json')
-    .defer(d3.json, 'jsons/drug/xtcuse.json')
-    .defer(d3.json, 'jsons/drug/opiateuse.json')
-    .defer(d3.json, 'jsons/drug/cannabisuse.json')
-    .defer(d3.json, 'jsons/drug/opioideuse.json')
+    .defer(d3.json, 'json/drug/amfetamineuse.json')
+    .defer(d3.json, 'json/drug/cocaineuse.json')
+    .defer(d3.json, 'json/drug/xtcuse.json')
+    .defer(d3.json, 'json/drug/opiateuse.json')
+    .defer(d3.json, 'json/drug/cannabisuse.json')
+    .defer(d3.json, 'json/drug/opioideuse.json')
     .await(drugData);
 // prepare data
 function drugData(error, amfetamine, cocaine, xtc, opiate, cannabis, opioide){

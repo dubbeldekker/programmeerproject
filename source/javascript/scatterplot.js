@@ -30,8 +30,8 @@ var plotTip = d3.select("body").append("div")
   .attr("class", "plotTip")
   .style("opacity", 0);
 // make plot on load page
-var jsonInfluence = "jsons/influence/dropout.json";
-var jsonDrug = "jsons/drug/amfetamineuse.json";
+var jsonInfluence = "json/influence/dropout.json";
+var jsonDrug = "json/drug/amfetamineuse.json";
 queue()
   .defer(d3.json, jsonInfluence)
   .defer(d3.json, jsonDrug)
@@ -58,32 +58,32 @@ function makePlot(error, influence, drug) {
   // remove old plot
   d3.selectAll(".removeScatter").remove();
   // show the right influence information
-  if(jsonInfluence == "jsons/influence/dropout.json") {
+  if(jsonInfluence == "json/influence/dropout.json") {
     $("#dropout").show();
   } else {
     $("#dropout").hide();
   }
-  if(jsonInfluence == "jsons/influence/education.json") {
+  if(jsonInfluence == "json/influence/education.json") {
     $("#education").show();
   } else {
     $("#education").hide();
   }
-  if(jsonInfluence == "jsons/influence/poverty.json") {
+  if(jsonInfluence == "json/influence/poverty.json") {
     $("#poverty").show();
   } else {
     $("#poverty").hide();
   }
-  if(jsonInfluence == "jsons/influence/prison.json") {
+  if(jsonInfluence == "json/influence/prison.json") {
     $("#prison").show();
   } else {
     $("#prison").hide();
   }
-  if(jsonInfluence == "jsons/influence/smoke.json") {
+  if(jsonInfluence == "json/influence/smoke.json") {
     $("#smoking").show();
   } else {
     $("#smoking").hide();
   }
-  if(jsonInfluence == "jsons/influence/unemployment.json") {
+  if(jsonInfluence == "json/influence/unemployment.json") {
     $("#unemployment").show();
   } else {
     $("#unemployment").hide();

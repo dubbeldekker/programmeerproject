@@ -4,7 +4,7 @@
 // global variables
 var chosenCountry;
 var drugCountry;
-var json = "jsons/drug/amfetamineuse.json"
+var json = "json/drug/amfetamineuse.json"
 // initiate choroplethmap
 var map = new Datamap({
 	element: document.getElementById('map'),

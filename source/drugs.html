@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>programmeerproject</title>
-		<link rel="stylesheet" type="text/css" href="drugs.css"/>
+		<link rel="stylesheet" type="text/css" href="css/drugs.css"/>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 	<body>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-		<script src="worldmap.js"></script>
+		<script src="javascript/worldmap.js"></script>
 		<div id="projectTitle">
 			<h1><b>Drug use in Europe.</b></h1>
 			<h5><b>Drugs are fun and dangerous at the same time and are used everywhere around the world.<br>But where and why?</b></h5>
@@ -26,12 +26,12 @@
 				<p>All the values are the percentage of regular drug users of the population of the country.</p>
 				<p>Drug:
 					<select class="drugMenu onHover">
-						<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-						<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-						<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-						<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-						<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-						<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+						<option class="drug" value="json/drug/amfetamineuse.json">amfetamine</option>
+						<option class="drug" value="json/drug/cannabisuse.json">cannabis</option>
+						<option class="drug" value="json/drug/cocaineuse.json">cocaine</option>
+						<option class="drug" value="json/drug/xtcuse.json">XTC</option>
+						<option class="drug" value="json/drug/opiateuse.json">opiates</option>
+						<option class="drug" value="json/drug/opioideuse.json">opioides</option>
 					</select>
 				</p>
 			</div>
@@ -54,11 +54,11 @@
 			<div id="drugmapFacts">
 				<p>Some facts about the map:</p>
 				<ul>
-					<li onclick=updateMap("jsons/drug/amfetamineuse.json") class="onHover">Poland has the most regular amfetamine users of Europe.</li>
-					<li onclick=updateMap("jsons/drug/cocaineuse.json") class="onHover">Cocaine is most used in West-Europe</li>
-					<li onclick=updateMap("jsons/drug/opioideuse.json") class="onHover">Opioides are most used in East-Europe</li>
-					<li onclick=updateMap("jsons/drug/cannabisuse.json") class="onHover">Iceland has the largest percentage of regular cannabis users of Europe and even the world.</li>
-					<li onclick=updateMap("jsons/drug/cannabisuse.json") class="onHover">Cannabis has the most regular users of all the drugs.</li>
+					<li onclick=updateMap("json/drug/amfetamineuse.json") class="onHover">Poland has the most regular amfetamine users of Europe.</li>
+					<li onclick=updateMap("json/drug/cocaineuse.json") class="onHover">Cocaine is most used in West-Europe</li>
+					<li onclick=updateMap("json/drug/opioideuse.json") class="onHover">Opioides are most used in East-Europe</li>
+					<li onclick=updateMap("json/drug/cannabisuse.json") class="onHover">Iceland has the largest percentage of regular cannabis users of Europe and even the world.</li>
+					<li onclick=updateMap("json/drug/cannabisuse.json") class="onHover">Cannabis has the most regular users of all the drugs.</li>
 				</ul>
 			</div>
 		</div>
@@ -87,23 +87,23 @@
 			<div id="plotDrugMenu">
 				<p class="aboveDrugMenu">Drug:</p>
 				<select class="plotDrugMenu onHover">
-					<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-					<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-					<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-					<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-					<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-					<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+					<option class="drug" value="json/drug/amfetamineuse.json">amfetamine</option>
+					<option class="drug" value="json/drug/cannabisuse.json">cannabis</option>
+					<option class="drug" value="json/drug/cocaineuse.json">cocaine</option>
+					<option class="drug" value="json/drug/xtcuse.json">XTC</option>
+					<option class="drug" value="json/drug/opiateuse.json">opiates</option>
+					<option class="drug" value="json/drug/opioideuse.json">opioides</option>
 				</select>
 			</div>
 			<div id="plotInfluenceMenu">
 				<p class="aboveInfluenceMenu">Influence:</p>
 				<select class="plotInfluenceMenu onHover">
-					<option class="influence" value="jsons/influence/dropout.json">dropout</option>
-					<option class="influence" value="jsons/influence/education.json">education</option>
-					<option class="influence" value="jsons/influence/poverty.json">poverty</option>
-					<option class="influence" value="jsons/influence/prison.json">criminality</option>
-					<option class="influence" value="jsons/influence/smoke.json">smoking</option>
-					<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
+					<option class="influence" value="json/influence/dropout.json">dropout</option>
+					<option class="influence" value="json/influence/education.json">education</option>
+					<option class="influence" value="json/influence/poverty.json">poverty</option>
+					<option class="influence" value="json/influence/prison.json">criminality</option>
+					<option class="influence" value="json/influence/smoke.json">smoking</option>
+					<option class="influence" value="json/influence/unemployment.json">unemployment</option>
 				</select>
 			</div>
 			<div id="dropout">
@@ -135,8 +135,8 @@
 			<svg id="plot"></svg>
 		</div>
 		<!-- scripts -->
-		<script src="piechart.js"></script>
-		<script src="drugmap.js"></script>
-		<script src="scatterplot.js"></script>
+		<script src="javascript/piechart.js"></script>
+		<script src="javascript/drugmap.js"></script>
+		<script src="javascript/scatterplot.js"></script>
 	</body>
 </html>
