@@ -6,4 +6,4 @@
 ![screenshot](doc/screenshot1.jpg)
 ##### Using drugs can have different causes. With the help of a scatterplot you can see if there is a correlation between an assumed cause of drug use and the use of one of the drug groups. Same as with the choropleth map there can be looked at the ratios of the drug use between different drugs in one country. It looks as followed:
 ![screenshot](doc/screenshot2.jpg)
-##### This project uses jQuery, D3, and bootstrap.
+##### This project uses jQuery, D3, bootstrap and datamaps.
