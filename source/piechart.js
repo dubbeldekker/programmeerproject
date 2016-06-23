@@ -1,8 +1,9 @@
 // programmeerproject
 // Marije Dekker, 10785949
 
-var width = 650,
-    height = 550,
+// global variables
+var width = 600,
+    height = 500,
     radius = Math.min(width, height) / 2.5;
 
 var colorPie = d3.scale.ordinal()
@@ -18,7 +19,9 @@ var outerArc = d3.svg.arc()
 
 var pie = d3.layout.pie()
     .sort(null)
-    .value(function(d) { return d.bestEstimate; });
+    .value(function(d) { 
+        return d.bestEstimate; 
+    });
 
 var svg = d3.select("#donut")
     .attr("width", width)
@@ -33,9 +36,10 @@ svg.append("g")
 svg.append("g")
     .attr("class", "lines");
 
-var div = d3.select("body").append("div").attr("class", "toolTip");
+var donutTip = d3.select("body").append("div").attr("class", "donutTip");
 
 var countryDiv = document.getElementById("clickedCountry");
+
 var rawPieData = [];
 // make queue
 queue()
@@ -49,46 +53,46 @@ queue()
 // prepare data
 function drugData(error, amfetamine, cocaine, xtc, opiate, cannabis, opioide){
     if (error) throw error;
-    amfetamine.forEach(function(d){
+    amfetamine.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "amfetamine", "bestEstimate": d.bestEstimate})
     });
-    cocaine.forEach(function(d){
+    cocaine.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "cocaine", "bestEstimate": d.bestEstimate})
     });
-    xtc.forEach(function(d){
+    xtc.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "XTC", "bestEstimate": d.bestEstimate})
     });    
-    opiate.forEach(function(d){
+    opiate.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "opiates", "bestEstimate": d.bestEstimate})
     });
-    cannabis.forEach(function(d){
+    cannabis.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "cannabis", "bestEstimate": d.bestEstimate})
     });
-    opioide.forEach(function(d){
+    opioide.forEach(function(d) {
         rawPieData.push({"countryCode": d.countrycode, "drug": "opioides", "bestEstimate": d.bestEstimate})
     });
-    makePiechart("NLD", "Click on a country in the map. <br> Netherlands");
+    makePiechart("NLD", "Netherlands");
 }
-
-function convertData(data){
+// push relative numbers to pieData
+function convertData(data) {
     var total = 0; 
-    data.forEach( function(d){
+    data.forEach( function(d) {
         return total = total + d.bestEstimate;
     })
-    data.map(function(d) { d.percent=Math.round((d.bestEstimate*100)/total) })
+    data.map(function(d) {
+        d.percent=((d.bestEstimate*100)/total)
+    })
     return data;
 }
 // function to make piechart
-function makePiechart(drugCountry, chosenCountry){
-    // remove no data text
-    d3.selectAll(".removepie").remove();
+function makePiechart(drugCountry, chosenCountry) {
     // make data
     var pieData = [];
-    rawPieData.forEach(function(d){
-        if (drugCountry == d.countryCode){
+    rawPieData.forEach(function(d) {
+        if (drugCountry == d.countryCode) {
             pieData.push({"drug": d.drug, "bestEstimate": d.bestEstimate});
         }
-        countryDiv.innerHTML = (chosenCountry + ":");
+        countryDiv.innerHTML = (chosenCountry);
     })
     if (pieData.length < 1) {
         countryDiv.innerHTML = ("There is no data of " + chosenCountry + ".");
@@ -103,15 +107,15 @@ function makePiechart(drugCountry, chosenCountry){
         .insert("path")
         .style("fill", function(d) { return colorPie(d.data.drug); })
         .attr("class", "slice")
-        // the tooltip
-        .on("mousemove", function(d){
-            div.style("left", d3.event.pageX+10+"px");
-                  div.style("top", d3.event.pageY-25+"px");
-                  div.style("display", "inline-block");
-            div.html((d.data.percent)+"% of the regular drugusers use "+ (d.data.drug));
+        // tooltip
+        .on("mousemove", function(d) {
+            donutTip.style("left", d3.event.pageX+10+"px");
+                  donutTip.style("top", d3.event.pageY-25+"px");
+                  donutTip.style("display", "inline-block");
+            donutTip.html((d3.format(",.1f")(d.data.percent))+"% of the regular drugusers use "+ (d.data.drug));
         })
         .on("mouseout", function(d){
-            div.style("display", "none");
+            donutTip.style("display", "none");
         });
     slice.transition().duration(750)
         .attrTween("d", function(d) {
@@ -133,7 +137,7 @@ function makePiechart(drugCountry, chosenCountry){
         .text(function(d) {
             return d.data.drug;
         });   
-    function midAngle(d){
+    function midAngle(d) {
         return d.startAngle + (d.endAngle - d.startAngle)/2;
     }
     text.transition().duration(800)
@@ -148,7 +152,7 @@ function makePiechart(drugCountry, chosenCountry){
                 return "translate("+ pos +")";
             };
         })
-        .styleTween("text-anchor", function(d){
+        .styleTween("text-anchor", function(d) {
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);
             this._current = interpolate(0);
@@ -165,7 +169,7 @@ function makePiechart(drugCountry, chosenCountry){
     polyline.enter()
         .append("polyline");
     polyline.transition().duration(750)
-        .attrTween("points", function(d){
+        .attrTween("points", function(d) {
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);
             this._current = interpolate(0);

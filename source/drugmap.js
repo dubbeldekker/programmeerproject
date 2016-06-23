@@ -11,7 +11,7 @@ var map = new Datamap({
 	// europe
   setProjection: function(element) {
       var projection = d3.geo.equirectangular()
-        .center([20, 10])
+        .center([20, 15])
         .rotate([4, 0])
         .scale(675)
         .translate([element.offsetWidth / 2, element.offsetHeight + 200]);
@@ -78,7 +78,6 @@ map.legend({
 // if a drug is chosen
 d3.selectAll(".drugMenu")
   .on("change", function() {
-    map.updateChoropleth(null, {reset: true})
     json = d3.select(this).property("value");
     updateMap(json);
   });
@@ -86,7 +85,8 @@ d3.selectAll(".drugMenu")
 updateMap(json);
 // update map fill colors and tooltip
 function updateMap(json){
-  d3.json(json, function(error, data){
+  map.updateChoropleth(null, {reset: true})
+  d3.json(json, function(error, data) {
     if (error) throw error;
     for (i in data) {
       var fillKey = {};
@@ -94,7 +94,7 @@ function updateMap(json){
       fillKey["percentage"] = data[i].bestEstimate;
       update[data[i].countrycode] = fillKey;
       map.updateChoropleth(update);
-      if (data[i].bestEstimate < 0.2){
+      if (data[i].bestEstimate < 0.2) {
         fillKey["fillKey"] = "D1";
         update[data[i].countrycode] = fillKey;
         map.updateChoropleth(update);
@@ -134,7 +134,7 @@ function updateMap(json){
         update[data[i].countrycode] = fillKey;
         map.updateChoropleth(update);
       }
-      if (data[i].bestEstimate >= 1.6){
+      if (data[i].bestEstimate >= 1.6) {
         fillKey["fillKey"] = "D9";
         update[data[i].countrycode] = fillKey;
         map.updateChoropleth(update);

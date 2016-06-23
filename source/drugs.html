@@ -10,70 +10,22 @@
 		<script src="http://d3js.org/queue.v1.min.js"></script>
 	</head>
 	<body>
-		<div id="wrapper">
-			<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-			<script src="worldmap.js"></script>
-			<div id="projectTitle">
-				<h1 class="purple"><b>Drug use in Europe.</b></h1>
-				<h5 class="purple"><b>This project tries to visualize drug use in Europe and what could be an influence on drug use in the European countries.</b></h5>
-			</div>
-			<div id="drugmap">
-				<div id="drugmapTitle">
-					<h3 class="purple "> What percentage of the population of the countries in Europe use drugs? </h3>
-					<p class="purple">In this map is visualized how drug use is distributed over Europe and how much the drug is used in each European country.</p>
-					<p class="purple">All the values are the percentage of regular drug users of the population of the country.</p>
-					<p class= "purple">Drug:
-						<select class="drugMenu onHover purple">
-							<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
-							<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
-							<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
-							<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
-							<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
-							<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
-						</select>
-					</p>
-				</div>
-				<div id="map"></div>
-				<div id="drugDataInformation">
-					<p class="purple"> This data comes from the <a href="http://www.unodc.org/wdr2014/en/interactive-map.html"> World Drug Report 2014 </a><br>For more information see: <a href="https://www.unodc.org/documents/wdr2014/World_Drug_Report_2014_web.pdf"> World Drug Report 2014</a>.</p>
-				</div>
-				<div id="drugmapInformation">
-					<p class="purple">The drugs are separated in the following groups:</p>
-					<ul class="purple">
-						<li><a href="https://www.drugs.com/amphetamine.html" class="onHover">Amfetamines</a>: stimulant drugs like speed/pep.</li>
-						<li><a href="https://www.drugs.com/npp/marijuana.html" class="onHover">Cannabis</a>: a depressant drug, marijuana/weed.</li>
-						<li><a href="https://www.drugs.com/illicit/cocaine.html" class="onHover">Cocaine</a>: a stimulant drug in the form of a powder or crack.</li>
-						<li><a href="https://www.drugs.com/illicit/ecstasy.html" class="onHover">XTC</a>: a stimulant drug, most important ingredient is MDMA.</li>
-						<li><a href="https://www.drugs.com/dict/opiate.html" class="onHover">opiates</a>: painkiller, a preparation/derivative from opium. </li>
-						<li><a href="https://www.drugs.com/article/opioid-narcotics.html" class="onHover">opioides</a>: synthetic opiates like oxycontin.</li>
-					</ul>
-					<p class="purple">Click on the drugs for more information or take a look at <a href="https://www.drugs.com/">www.drugs.com</a>.</p>
-				</div>
-				<div id="drugmapFacts">
-					<p class="purple">Some facts about the map:</p>
-					<ul class="purple">
-						<li>Poland has the most regular amfetamine users of Europe.</li>
-						<li>Cocaine is most used in West-Europe</li>
-						<li>Opiates and opioides are most used in East-Europe</li>
-						<li>Iceland has the largest percentage of regular cannabis users of Europe and the world.</li>
-						<li>Cannabis has the most regular users of all the drugs.</li>
-					</ul>
-				</div>
-			</div>
-	      	<div id="piechart">
-	      		<h3 class="purple centerText">The ratios between the different drugs used in a country.</h3>
-	      		<div class="clickedCountry purple" id="clickedCountry"></div>
-	      		<svg id="donut"></svg>
-	      	</div>
-			<script src="piechart.js"></script>
-			<script src="drugmap.js"></script>
-			<div class="influencechart">
-				<h3 class="purple">The influences on using drugs.</h3>
-				<p class="purple">Choose an influence and/or drug.</p>
-				<div class="scatterDrug">
-					<p class="aboveDrugMenu">drug:</p>
-					<select class="pull-left scatterdrugmenu onHover">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+		<script src="worldmap.js"></script>
+		<div id="projectTitle">
+			<h1><b>Drug use in Europe.</b></h1>
+			<h5><b>Drugs are fun and dangerous at the same time and are used everywhere around the world.<br>But where and why?</b></h5>
+			<p>This project tries to visualize drug use in Europe and what could be an influence on drug use in the European countries.</p>
+			<p id="name">Marije Dekker, 10785949<br>Programmeerproject</p>
+		</div>
+		<div id="drugmap">
+			<div id="drugmapTitle">
+				<h3> What percentage of the population of the countries in Europe use drugs? </h3>
+				<p>In this map is visualized how drug use is distributed over Europe and how much the drug is used in each European country.</p>
+				<p>All the values are the percentage of regular drug users of the population of the country.</p>
+				<p>Drug:
+					<select class="drugMenu onHover">
 						<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
 						<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
 						<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
@@ -81,21 +33,110 @@
 						<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
 						<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
 					</select>
-				</div>
-				<div class="scatterInfluence">
-					<p class="aboveInfluenceMenu">influence:</p>
-					<select class="scatterinfluencemenu pull-left onHover">
-						<option class="influence" value="jsons/influence/dropout.json">dropout</option>
-						<option class="influence" value="jsons/influence/education.json">education</option>
-						<option class="influence" value="jsons/influence/poverty.json">poverty</option>
-						<option class="influence" value="jsons/influence/prison.json">criminality</option>
-						<option class="influence" value="jsons/influence/smoke.json">smoking</option>
-						<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
-					</select>
-				</div>
-				<svg class="chart"></svg>
-				<script src="scatterplot.js"></script>
+				</p>
+			</div>
+			<div id="map"></div>
+			<div id="drugDataInformation">
+				<p> This data comes from the <a href="http://www.unodc.org/wdr2014/en/interactive-map.html"> World Drug Report 2014 </a><br>For more information see: <a href="https://www.unodc.org/documents/wdr2014/World_Drug_Report_2014_web.pdf"> World Drug Report 2014</a>.</p>
+			</div>
+			<div id="drugmapInformation">
+				<p>The drugs are separated in the following groups:</p>
+				<ul>
+					<li><a href="https://www.drugs.com/amphetamine.html" class="onHover">Amfetamines</a>: stimulant drugs like speed/pep.</li>
+					<li><a href="https://www.drugs.com/npp/marijuana.html" class="onHover">Cannabis</a>: a depressant drug, marijuana/weed.</li>
+					<li><a href="https://www.drugs.com/illicit/cocaine.html" class="onHover">Cocaine</a>: a stimulant drug in the form of a powder or crack.</li>
+					<li><a href="https://www.drugs.com/illicit/ecstasy.html" class="onHover">XTC</a>: a stimulant drug, most important ingredient is MDMA.</li>
+					<li><a href="https://www.drugs.com/dict/opiate.html" class="onHover">opiates</a>: painkiller, a preparation/derivative from opium. </li>
+					<li><a href="https://www.drugs.com/article/opioid-narcotics.html" class="onHover">opioides</a>: synthetic opiates like oxycontin.</li>
+				</ul>
+				<p>Click on the drugs for more information or take a look at <a href="https://www.drugs.com/">www.drugs.com</a>.</p>
+			</div>
+			<div id="drugmapFacts">
+				<p>Some facts about the map:</p>
+				<ul>
+					<li onclick=updateMap("jsons/drug/amfetamineuse.json") class="onHover">Poland has the most regular amfetamine users of Europe.</li>
+					<li onclick=updateMap("jsons/drug/cocaineuse.json") class="onHover">Cocaine is most used in West-Europe</li>
+					<li onclick=updateMap("jsons/drug/opioideuse.json") class="onHover">Opioides are most used in East-Europe</li>
+					<li onclick=updateMap("jsons/drug/cannabisuse.json") class="onHover">Iceland has the largest percentage of regular cannabis users of Europe and even the world.</li>
+					<li onclick=updateMap("jsons/drug/cannabisuse.json") class="onHover">Cannabis has the most regular users of all the drugs.</li>
+				</ul>
 			</div>
 		</div>
+      	<div id="piechart">
+      		<div id="donutTitle">
+      			<h3>The ratios between the different drugs used in a country.</h3>
+      			<p>Click on a country in the map or scatterplot to see the ratio of the regular users by drugs in that country.</p>
+      			<div id="donutFacts">
+	      			<p>Some interesting countries to look at are: 
+	      				<a onclick="makePiechart('ISL', 'Iceland')" class="onHover">Iceland</a>,
+	      				<a onclick="makePiechart('KAZ', 'Kazakhstan')" class="onHover">Kazakhstan</a>,
+	      				<a onclick="makePiechart('POL', 'Poland')" class="onHover">Poland</a>,
+	      				<a onclick="makePiechart('MKD', 'Macedonia')" class="onHover">Macedonia</a> and
+	      				<a onclick="makePiechart('TUR', 'Turkey')" class="onHover">Turkey</a>.
+	      			</p>
+	      		</div>
+      		</div>
+      		<div class="clickedCountry" id="clickedCountry"></div>
+      		<svg id="donut"></svg>
+      	</div>
+		<div id="scatterplot">
+			<div id="plotTitle">
+				<h3>The influences on using drugs.</h3>
+				<p>By choosing an influence and/or drug you can see what factor could have an influence on drug use or if there is a correlation between the factor and drug use.</p>
+			</div>
+			<div id="plotDrugMenu">
+				<p class="aboveDrugMenu">Drug:</p>
+				<select class="plotDrugMenu onHover">
+					<option class="drug" value="jsons/drug/amfetamineuse.json">amfetamine</option>
+					<option class="drug" value="jsons/drug/cannabisuse.json">cannabis</option>
+					<option class="drug" value="jsons/drug/cocaineuse.json">cocaine</option>
+					<option class="drug" value="jsons/drug/xtcuse.json">XTC</option>
+					<option class="drug" value="jsons/drug/opiateuse.json">opiates</option>
+					<option class="drug" value="jsons/drug/opioideuse.json">opioides</option>
+				</select>
+			</div>
+			<div id="plotInfluenceMenu">
+				<p class="aboveInfluenceMenu">Influence:</p>
+				<select class="plotInfluenceMenu onHover">
+					<option class="influence" value="jsons/influence/dropout.json">dropout</option>
+					<option class="influence" value="jsons/influence/education.json">education</option>
+					<option class="influence" value="jsons/influence/poverty.json">poverty</option>
+					<option class="influence" value="jsons/influence/prison.json">criminality</option>
+					<option class="influence" value="jsons/influence/smoke.json">smoking</option>
+					<option class="influence" value="jsons/influence/unemployment.json">unemployment</option>
+				</select>
+			</div>
+			<div id="dropout">
+				<p>The percentage of school dropouts from the 20 - 24 year olds.</p>
+			</div>
+			<div id="education">
+				<p>The percentage of 30 - 34 year olds with tertiair education.</p>
+			</div>
+			<div id="poverty">
+				<p>The percentage of people that have to live with less than $1.90 per day.</p>
+			</div>
+			<div id="prison">
+				<p>The percentage of people of the population of the country that is incarcerated.</p>
+			</div>
+			<div id="smoking">
+				<p>The percentage of people of the total population of the country who smoke every day</p>
+			</div>
+			<div id="unemployment">
+				<p>The percentage of people of the total population of the country who are unemployed</p>
+			</div>
+			<div id="plotFacts">
+				<p>Some interesting facts to look at in the plot are:</p>
+				<ul>
+					<li>Unemployment seems to have a negative influence on amfetamine use.</li>
+					<li>Criminality seems to have a positive influence on opiate and opioide use.</li>
+					<li>There seems to be no correlation between smoking and cannabis use.</li>
+				</ul>
+			</div>
+			<svg id="plot"></svg>
+		</div>
+		<!-- scripts -->
+		<script src="piechart.js"></script>
+		<script src="drugmap.js"></script>
+		<script src="scatterplot.js"></script>
 	</body>
 </html>
