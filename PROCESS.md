@@ -66,7 +66,7 @@
 * Hele code opgeschoond, overzichtelijk gemaakt, variabele namen aangepast en comments toegevoegd.
 ### 23 juni
 * Code netter gemaakt.
-* Pagina zelf is af (css en html voornamelijk).
+* Pagina zelf is "af" (css en html voornamelijk).
 * Verschillende files opgedeeld in mappen.
 * De README geupdate.
 * PROCESS bijgehouden.
